@@ -1,0 +1,30 @@
+<h1><%= @club.name %> <%= link_to "(Edit)", edit_club_path %></h1>
+<div class = "meetings">
+  <h2>Meetings <%= link_to "(+)", new_club_meeting_path(@club) %></h2>
+  <ul>
+  <% @club.meetings.each do |meeting|%>
+    <li> <%= link_to meeting.date, club_meeting_path(meeting) %></li>
+  <% end %>
+  </ul
+</div>
+<sidebar>
+  <div class = "books">
+    <h2>Books</h2>
+    <ul>
+    <% @club.books.each do |book|%>
+      <li> <%= link_to book.title, book.link %> | <%= book.author %>
+        <img class = "book_photo" src = "<%= book.photo_url %>">
+
+    <% end %>
+    </ul
+  </div>
+  <div class = "members">
+    <h2>Members</h2>
+    <ul>
+    <% @club.members.each do |member|%>
+      <li> <%= link_to member.name, club_member_path(member) %>
+        <img class = "member_photo" src = "<%= member.photo_url %> ">
+    <% end %>
+    </ul
+  </div>
+</sidebar>

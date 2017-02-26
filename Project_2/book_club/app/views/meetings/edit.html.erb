@@ -1,0 +1,15 @@
+<h2>Edit Meeting</h2>
+
+<%= form_for [@club, @meeting] do |f| %>
+  <%= f.label :date %>
+  <%= f.text_field :date %>
+
+  <%= f.label :host %>
+  <%= f.text_field :member_id %>
+
+  <%= f.submit %>
+<% end %>
+
+<%= form_for [@club, @meeting], method: :delete do |f| %>
+  <%= f.submit "Delete", class: "delete" %>
+<% end %>

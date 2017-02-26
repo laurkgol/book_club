@@ -1,0 +1,22 @@
+<h2>Edit Member</h2>
+
+<%= form_for [@club, @member] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+
+  <%= f.label :photo_url %>
+  <%= f.text_field :photo_url %>
+
+
+  <%= f.submit %>
+<% end %>
+
+<%= form_for [@club, @member], method: :delete do |f| %>
+  <%= f.submit "Delete", class: "delete" %>
+<% end %>

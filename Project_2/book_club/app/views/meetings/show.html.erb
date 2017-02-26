@@ -1,0 +1,3 @@
+<h2> <%= link_to @club.name, club_path(@club) %> </h2>
+<h3><%= @meeting.date %> <%= link_to "(edit)", edit_club_meeting_path(@meeting) %></h3>
+<p><%= @meeting.member_id %></p>

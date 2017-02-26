@@ -1,0 +1,12 @@
+<h1> <%= link_to @club.name, club_path(@club) %> </h1>
+<h2>New Meeting</h2>
+
+<%= form_for [@club, @meeting] do |f| %>
+  <%= f.label :date %>
+  <%= f.text_field :date %>
+
+  <%= f.label :host %>
+  <%= f.text_field :member_id %>
+
+  <%= f.submit %>
+<% end %>
