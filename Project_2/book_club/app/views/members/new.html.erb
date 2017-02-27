@@ -1,0 +1,27 @@
+<h1> <%= link_to @club.name, club_path(@club) %> </h1>
+<h2>New Meeting</h2>
+
+<%= form_for [@club, @member] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <%= f.label :street_address %>
+  <%= f.text_field :street_address %>
+
+  <%= f.label :street_address_2 %>
+  <%= f.text_field :street_address_2 %>
+
+  <%= f.label :city %>
+  <%= f.text_field :city %>
+
+  <%= f.label :state %>
+  <%= f.text_field :state %>
+
+  <%= f.label :photo_url %>
+  <%= f.text_field :photo_url %>
+
+  <%= f.submit %>
+<% end %>

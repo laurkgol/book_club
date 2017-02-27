@@ -4,7 +4,7 @@ class MembersController < ApplicationController
   end
   def show
     @member = Member.find(params[:id])
-    @club = Club.find(params[:club_id])
+    @club = Club.find(@member.club_id)
   end
 
   def new
@@ -15,7 +15,7 @@ class MembersController < ApplicationController
   def create
     @club = Club.find(params[:club_id])
     @club.members.create(member_params)
-    redirect_to club_member_path(@club)
+    redirect_to club_path(@club)
   end
 
   def edit
@@ -27,7 +27,7 @@ class MembersController < ApplicationController
     @club = Club.find(params[:club_id])
     @member = Member.find(params[:id])
     @member.update(member_params)
-    redirect_to club_path(@club)
+    redirect_to club_member_path(@club, @member)
 
   end
 
@@ -40,6 +40,6 @@ class MembersController < ApplicationController
 
   private
   def member_params
-    params.require(:member).permit(:name, :email, :address, :photo_url)
+    params.require(:member).permit(:name, :email, :street_address, :street_address_2, :city, :state, :zip, :photo_url)
   end
 end

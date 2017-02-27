@@ -1,3 +1,4 @@
+<main>
 <h2>Edit Meeting</h2>
 
 <%= form_for [@club, @meeting] do |f| %>
@@ -13,3 +14,4 @@
 <%= form_for [@club, @meeting], method: :delete do |f| %>
   <%= f.submit "Delete", class: "delete" %>
 <% end %>
+</main>

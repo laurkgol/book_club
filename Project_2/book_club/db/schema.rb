@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 20170224201159) do
 
   create_table "meetings", force: :cascade do |t|
     t.string  "date"
+    t.string  "location"
+    t.string  "host"
     t.integer "member_id"
     t.integer "book_id"
     t.integer "club_id"

@@ -3,17 +3,21 @@
   <head>
     <title>BookClub</title>
     <%= csrf_meta_tags %>
-<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <nav>
-      <h1>BookClub.r</h1>
+      <h1 id = "title">BookClub <%= image_tag('books.png', :class => 'logo', :id => 'books') %> <%= image_tag('wine.png', :class => 'logo', :id => 'wine')  %></h1>
     </nav>
-    <main>
+
     <%= yield %>
-    </main>
+    <footer>
+      <p>Laura Goldstein | <a href = "https://laurkgol.github.io/">Portfolio </a></p>
+    </footer>
+
   </body>
 </html>

@@ -1,3 +1,4 @@
+<main>
 <h1> <%= link_to @club.name, club_path(@club) %> </h1>
 <h2>New Meeting</h2>
 
@@ -6,7 +7,11 @@
   <%= f.text_field :date %>
 
   <%= f.label :host %>
-  <%= f.text_field :member_id %>
+  <%= f.text_field :host %>
+
+  <%= f.label :location %>
+  <%= f.text_field :location %>
 
   <%= f.submit %>
 <% end %>
+</main>

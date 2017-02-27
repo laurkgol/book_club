@@ -2,6 +2,7 @@
 <h3><%= @member.name %> <%= link_to "(edit)", edit_club_member_path(@club) %></h3>
 <ul>
   <li><a href = "mailto:<%= @member.email %>"><%= @member.email %></a></li>
-  <li> <%= @member.address %></li>
+  <li> <%= @member.street_address %>, <%= @member.street_address_2 %></li>
+  <li> <%= @member.city %>, <%= @member.state %> <%= @member.zip %></li>
     <img class = "member_photo" src = "<%= @member.photo_url %> ">
 </ul>

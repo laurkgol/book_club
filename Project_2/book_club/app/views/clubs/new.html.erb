@@ -1,10 +1,17 @@
+<main>
 <h3>New Book Club </h3>
+<ul>
 <%= form_for @club do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<li>  <%= f.label :name %> </li>
+<li>  <%= f.text_field :name %> </li>
 
-  <%= f.label :start_date %>
-  <%= f.text_field :start_date %>
+<li> <%= f.label :start_date %> </li>
+<li>  <%= f.text_field :start_date %> </li>
 
-  <%= f.submit %>
+<li>  <%= f.label :end_date %> </li>
+<li>  <%= f.text_field :end_date %> </li>
+
+<li>  <%= f.submit %> </li>
+</ul>
 <%end%>
+</main>

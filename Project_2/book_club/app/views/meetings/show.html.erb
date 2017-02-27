@@ -1,3 +1,15 @@
+<main>
 <h2> <%= link_to @club.name, club_path(@club) %> </h2>
-<h3><%= @meeting.date %> <%= link_to "(edit)", edit_club_meeting_path(@meeting) %></h3>
-<p><%= @meeting.member_id %></p>
+<h3><%= @meeting.date %> <%= link_to "(edit)", edit_club_meeting_path(@club) %></h3>
+<% @meeting.books.each do |book| %>
+    <h2><%= book.title %> <%= link_to "(edit)", edit_meeting_book_path(@meeting, book) %></h2>
+    <p> <%= book.author %> </p>
+    <p> <%= book.genre %> </p>
+    <img src = "<%= book.photo_url %>">
+    <p><%= book.description %></p>
+    <a href = "<%= book.link %>" > Read More </a>
+<% end %>
+
+
+<h2> <%= link_to "Add Book", new_meeting_book_path(@meeting) %></h2>
+</main>

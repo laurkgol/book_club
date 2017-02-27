@@ -14,43 +14,107 @@
  *= require_self
  */
 body{
-
+  font-family: 'Open Sans', sans-serif;
 }
+h1{
+  font-size: 20pt;
+}
+h2{
+  font-family: 'Open Sans', sans-serif;
+}
+body{
+  display:flex;
+  min-height: 100vh;
 
-main{
-  background-color:grey;
-  display: flex;
   flex-direction: column;
 }
 
-h1{
-  font-family: 'Oswald', sans-serif;
-  color: white;
+#title{
+  font-family: 'Lobster', cursive;
+  color: black;
   font-size: 30pt;
 
 }
 
-nav{
-  background-color: black;
+nav, footer{
   padding: 10pt;
+  background-color: #FFEC00;
+  width: 100%;
+  text-align: center;
+
+}
+.create{
+  padding: 10pt;
+  background-color: #B23057;
+  width: 100%;
+  text-align: center;
+}
+main{
+  flex-grow: 3;
+}
+
+nav{
 
 }
 
+footer{
+  flex: 1;
+  padding-top: 20pt;
+
+}
+sidebar{
+}
 .meetings{
-  background-color: blue;
+  background-color: #B23057;
 }
 
 .members{
-  background-color: purple;
+  background-color: #CC144C;
   }
 .books{
-  background-color: green;
+  background-color: #19CBFF;
 }
 
 .member_photo{
-  width: 100pt;
 }
 
 .book_photo{
-  width: 100pt;
+}
+
+img{
+  height:100pt;
+}
+
+.logo{
+  height: 30pt;
+  margin: 0pt;
+
+}
+
+#books{
+
+}
+
+#wine{
+  position:relative;
+  right: 12px;
+  height: 25pt;
+  bottom: 1pt;
+}
+.club{
+  background-color: #B2A712;
+}
+ul{
+  list-style-type: none;
+
+}
+
+input[type: text]{
+  height: 20pt;
+}
+
+
+.book_table{
+  display: flex;
+  align-content: space-around;
 }

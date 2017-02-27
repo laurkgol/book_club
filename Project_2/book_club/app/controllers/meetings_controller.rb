@@ -1,6 +1,7 @@
 class MeetingsController < ApplicationController
   def index
     @meetings = Meeting.all
+
   end
   def new
       @club = Club.find(params[:club_id])
@@ -16,8 +17,7 @@ class MeetingsController < ApplicationController
 
   def show
     @meeting = Meeting.find(params[:id])
-    @club = Club.find(params[:club_id])
-
+    @club = Club.find(@meeting.club_id)
   end
 
   def edit
@@ -33,10 +33,11 @@ class MeetingsController < ApplicationController
 
   def destroy
     @meeting = Meeting.find(params[:id])
-    @meeting.destroy
-    @club = Club.find(params[:club_id])
+    @club = Club.find(@meeting.club_id)
 
-    redirect_to club_path
+    @meeting.destroy
+
+    redirect_to club_path(@club)
   end
 
 private
