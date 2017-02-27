@@ -1,31 +1,34 @@
-<h2>Edit Member</h2>
+<main>
+  <h2>Edit Member</h2>
+  <ul>
+    <%= form_for [@club, @member] do |f| %>
+      <li><%= f.label :name %></li>
+      <li><%= f.text_field :name %></li>
 
-<%= form_for [@club, @member] do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+      <li><%= f.label :email %></li>
+      <li><%= f.text_field :email %></li>
 
-  <%= f.label :email %>
-  <%= f.text_field :email %>
+      <li><%= f.label :street_address %></li>
+      <li><%= f.text_field :street_address %></li>
 
-  <%= f.label :street_address %>
-  <%= f.text_field :street_address %>
+      <li><%= f.label :street_address_2 %></li>
+      <li><%= f.text_field :street_address_2 %></li>
 
-  <%= f.label :street_address_2 %>
-  <%= f.text_field :street_address_2 %>
+      <li><%= f.label :city %></li>
+      <li><%= f.text_field :city %></li>
 
-  <%= f.label :city %>
-  <%= f.text_field :city %>
+      <li><%= f.label :state %></li>
+      <li><%= f.text_field :state %></li>
 
-  <%= f.label :state %>
-  <%= f.text_field :state %>
-
-  <%= f.label :photo_url %>
-  <%= f.text_field :photo_url %>
+      <li><%= f.label :photo_url %></li>
+      <li><%= f.text_field :photo_url %></li>
 
 
-  <%= f.submit %>
-<% end %>
+      <li><%= f.submit %></li>
+    <% end %>
 
-<%= form_for [@club, @member], method: :delete do |f| %>
-  <%= f.submit "Delete", class: "delete" %>
-<% end %>
+    <%= form_for [@club, @member], method: :delete do |f| %>
+      <li><%= f.submit "Delete", class: "delete" %></li>
+    <% end %>
+  </ul>
+</main>

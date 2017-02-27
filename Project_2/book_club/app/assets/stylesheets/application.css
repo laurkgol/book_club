@@ -43,6 +43,9 @@ nav, footer{
   text-align: center;
 
 }
+.sign{
+  text-align: left;
+}
 .create{
   padding: 10pt;
   background-color: #B23057;

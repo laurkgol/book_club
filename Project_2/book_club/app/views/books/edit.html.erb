@@ -1,26 +1,27 @@
 <main>
   <h2>Edit Book</h2>
+  <ul>
+    <%= form_for [@meeting, @book] do |f| %>
+    <li><%= f.label :title %></li>
+    <li><%= f.text_field :title %></li>
 
-  <%= form_for [@meeting, @book] do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+    <li><%= f.label :author %></li>
+    <li><%= f.text_field :author %></li>
 
-  <%= f.label :author %>
-  <%= f.text_field :author %>
+    <li> <%= f.label :photo_url %></li>
+    <li><%= f.text_field :photo_url %></li>
 
-  <%= f.label :photo_url %>
-  <%= f.text_field :photo_url %>
+    <li><%= f.label :link %></li>
+    <li><%= f.text_field :link %></li>
 
-  <%= f.label :link %>
-  <%= f.text_field :link %>
+    <li><%= f.label :description %></li>
+    <li><%= f.text_field :description %></li>
 
-  <%= f.label :description %>
-  <%= f.text_field :description %>
+    <li><%= f.label :genre %></li>
+    <li><%= f.text_field :genre %></li>
 
-  <%= f.label :genre %>
-  <%= f.text_field :genre %>
-
-    <%= f.submit %>
+      <li><%= f.submit %></li>
+  </ul>
   <% end %>
 
   <%= form_for [@club, @meeting], method: :delete do |f| %>

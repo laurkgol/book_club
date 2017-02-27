@@ -1,17 +1,18 @@
 <main>
-<h1> <%= link_to @club.name, club_path(@club) %> </h1>
-<h2>New Meeting</h2>
+  <h1> <%= link_to @club.name, club_path(@club) %> </h1>
+  <h2>New Meeting</h2>
+  <ul>
+    <%= form_for [@club, @meeting] do |f| %>
+      <li><%= f.label :date %></li>
+      <li><%= f.text_field :date %></li>
 
-<%= form_for [@club, @meeting] do |f| %>
-  <%= f.label :date %>
-  <%= f.text_field :date %>
+      <li><%= f.label :host %></li>
+      <li><%= f.text_field :host %></li>
 
-  <%= f.label :host %>
-  <%= f.text_field :host %>
+      <li><%= f.label :location %></li>
+      <li><%= f.text_field :location %></li>
 
-  <%= f.label :location %>
-  <%= f.text_field :location %>
-
-  <%= f.submit %>
-<% end %>
+      <li><%= f.submit %></li>
+    <% end %>
+  </ul>
 </main>

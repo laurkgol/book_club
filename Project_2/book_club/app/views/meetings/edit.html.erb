@@ -1,17 +1,21 @@
 <main>
-<h2>Edit Meeting</h2>
+  <h2>Edit Meeting</h2>
+  <ul>
+  <%= form_for [@club, @meeting] do |f| %>
+    <li><%= f.label :date %></li>
+    <li><%= f.text_field :date %></li>
 
-<%= form_for [@club, @meeting] do |f| %>
-  <%= f.label :date %>
-  <%= f.text_field :date %>
+    <li><%= f.label :host %></li>
+    <li><%= f.text_field :host %></li>
 
-  <%= f.label :host %>
-  <%= f.text_field :member_id %>
+    <li><%= f.label :location %></li>
+    <li><%= f.text_field :location %></li>
 
-  <%= f.submit %>
-<% end %>
+    <li><%= f.submit %></li>
+  <% end %>
 
-<%= form_for [@club, @meeting], method: :delete do |f| %>
-  <%= f.submit "Delete", class: "delete" %>
-<% end %>
+  <%= form_for [@club, @meeting], method: :delete do |f| %>
+    <li><%= f.submit "Delete", class: "delete" %></li>
+  <% end %>
+  </ul>
 </main>
