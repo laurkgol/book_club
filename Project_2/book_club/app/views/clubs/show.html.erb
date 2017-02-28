@@ -5,44 +5,52 @@
 <% else %>
     </h1>
 <% end %>
+</div>
   <p> Start date: <%= @club.start_date %>
-</div>
-<div class = "meetings">
-  <h2>Meetings <%= link_to "(+)", new_club_meeting_path(@club) %></h2>
-  <ul>
-  <% @club.meetings.each do |meeting|%>
-    <h3> Meeting: <%= link_to meeting.id, club_meeting_path(@club, meeting) %></h3>
-    <p> Date: <%= meeting.date %> </p>
-    <p> Host: <%= meeting.host %> </p>
-    <% @club.members.each do |member| %>
-      <% meeting.books.each do |book| %>
-
-      <p> Book: <%= book.title %> </p>
-      <p> Author: <%= book.author %> </p>
-      <p> Genre: <%= book.genre %> </p>
-      <div class = "book_table">
-        <div class = "book_photo">
-          <%= image_tag book.photo_url %>
-        </div
-        <div class = "book_description">
-          <p><%= book.description %></p>
-        </div>
-      <p><%= link_to "Read More", book.link %>
+<hr>
+  <div class = "rows">
+    <div class = "meetings">
+      <h2>Meetings </h2>
+      <div class = "add">
+        <%= link_to "Add Meeting", new_club_meeting_path(@club) %>
       </div>
+      <hr class = "big_line">
+      <% @club.meetings.each do |meeting|%>
+        <h3> Meeting: <%= link_to meeting.id, club_meeting_path(@club, meeting) %></h3>
+        <p> Date: <%= meeting.date %> </p>
+        <p> Host: <%= meeting.host %> </p>
+        <% meeting.books.each do |book| %>
+          <p> Book: <%= book.title %> </p>
+          <p> Author: <%= book.author %> </p>
+          <p> Genre: <%= book.genre %> </p>
+          <div class = "book_table">
+            <div class = "book_photo">
+              <%= image_tag book.photo_url %>
+            </div>
+            <div class = "book_description">
+              <p><%= book.description %></p>
+              <p><%= link_to "Read More", book.link %>
+            </div>
 
-        <hr>
-        <% end %>
-      <% end %>
-      <hr>
-    <% end %>
-  </ul>
-</div>
-    <div class = "members">
-      <h2>Members<%= link_to "(+)", new_club_member_path(@club) %></h2>
-      <ul>
-      <% @club.members.each do |member|%>
-        <li> <%= link_to member.name, club_member_path(@club, member) %>
-          <img class = "member_photo" src = "<%= member.photo_url %> ">
-      <% end %>
-      </ul
+            </div>
+            <hr>
+            <% end %>
+          <% end %>
+          </div>
+        </div>
+        <div class = "members">
+          <h2>Members</h2>
+          <div class = "add">
+            <%= link_to "Add Members", new_club_member_path(@club) %>
+          </div>
+
+          <% @club.members.each do |member|%>
+            <div class = "member_table">
+              <img class = "member_photo" src = "<%= member.photo_url %> ">
+              <%= link_to member.name, club_member_path(@club, member) %>
+            </div>
+              <hr>
+          <% end %>
+
+        </div>
     </div>

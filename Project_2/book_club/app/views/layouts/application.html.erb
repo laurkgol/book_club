@@ -22,10 +22,11 @@
            <%= link_to "Sign out", destroy_user_session_path, :method => :delete %> |
              <%= current_user.email %>
          <% end %>
-     </div>
+        </div>
       </nav>
-
-      <%= yield %>
+      <main>
+        <%= yield %>
+      </main>
       <footer>
         <p>Laura Goldstein | <a href = "https://laurkgol.github.io/">Portfolio </a></p>
       </footer>

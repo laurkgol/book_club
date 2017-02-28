@@ -13,20 +13,55 @@
  *= require_tree .
  *= require_self
  */
-body{
-  font-family: 'Open Sans', sans-serif;
+main{
+  margin-left: 20pt;
+  margin-right: 20pt;
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  border-color: #B23057;
+  border-width: 1pt;
+  padding: 20pt;
+}
+/*.rows{
+  display: flex;
+  flex-direction: row;
+}*/
+.meetings{
+
+}
+
+.add{
+  background-color: #19CBFF;
+  text-align: center;
+  padding: 10pt;
+}
+a {
+  text-decoration: none;
+  font-weight: bold;
+}
+hr {
+  color: #B23057;
+}
+.member_photo{
+  width: 100pt;
+  margin: 10pt;
 }
 h1{
   font-size: 20pt;
+  text-align: center;
+  font-family: 'Lobster', cursive;
+}
+.member_table{
+  display: flex;
+  flex-direction: column;
 }
 h2{
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lobster', cursive;
 }
 body{
-  display:flex;
   min-height: 100vh;
-
-  flex-direction: column;
+  font-family: 'Open Sans', sans-serif;
 }
 
 #title{
@@ -43,6 +78,10 @@ nav, footer{
   text-align: center;
 
 }
+
+nav{
+  margin-bottom: 20pt;
+}
 .sign{
   text-align: left;
 }
@@ -52,28 +91,22 @@ nav, footer{
   width: 100%;
   text-align: center;
 }
-main{
-  flex-grow: 3;
-}
+
 
 nav{
 
 }
 
-footer{
-  flex: 1;
-  padding-top: 20pt;
 
-}
 sidebar{
 }
-.meetings{
+.club{
   background-color: #B23057;
 }
 
-.members{
+/*.members{
   background-color: #CC144C;
-  }
+  }*/
 .books{
   background-color: #19CBFF;
 }
@@ -105,7 +138,7 @@ img{
   bottom: 1pt;
 }
 .club{
-  background-color: #B2A712;
+  background-color: #B23057;
 }
 ul{
   list-style-type: none;
@@ -119,7 +152,10 @@ input[type: text]{
 
 .book_table{
   display: flex;
-  align-content: space-around;
+  align-content: space-between;;
+}
+.book_description{
+  margin: 10pt;
 }
 
 #wrapper{
