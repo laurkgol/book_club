@@ -10,7 +10,7 @@ class ClubsController < ApplicationController
   end
 
   def create
-    @club = Club.create(club_params)
+    @club = Club.create(club_params.merge(user: current_user))
     redirect_to root_path
   end
 
@@ -20,7 +20,12 @@ class ClubsController < ApplicationController
 
   def update
     @club = Club.find(params[:id])
-    @club.update(club_params)
+    if @club.user == current_user
+        @club.update(club_params)
+    else
+      flash[:alert] = "Only the creater can edit"
+    end
+
     redirect_to club_path(@club)
   end
 

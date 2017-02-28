@@ -1,5 +1,10 @@
 <h2> <%= link_to @club.name, club_path(@club) %></h2>
-<h3><%= @member.name %> <%= link_to "(edit)", edit_club_member_path(@club) %></h3>
+<h3><%= @member.name %>
+  <% if current_user == @member.user %>
+    <%= link_to "(edit)", edit_club_member_path(@club) %></h3>
+  <% else %>
+    </h3>
+  <% end %>
 <ul>
   <li><a href = "mailto:<%= @member.email %>"><%= @member.email %></a></li>
   <li> <%= @member.street_address %>, <%= @member.street_address_2 %></li>

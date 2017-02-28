@@ -1,18 +1,31 @@
 <main>
 <h2> <%= link_to @club.name, club_path(@club) %> </h2>
-<h3> Meeting Date: <%= @meeting.date %> <%= link_to "(edit)", edit_club_meeting_path(@club) %></h3>
-<p> Host: <%= @meeting.host%><p>
+
+<h3> Meeting: <%= @meeting.id %>
+  <% if current_user == @meeting.user %>
+    <%= link_to "(edit)", edit_club_meeting_path(@club) %></h3>
+  <% else %>
+    </h3>
+  <% end %>
+<p> Date: <%= @meeting.date %> </p>
+<p> Host: <%= @meeting.host%></p>
 <p> Location: <%= @meeting.location%></p>
 <% @meeting.books.each do |book| %>
-    <p>Book Title: <%= book.title %> <%= link_to "(edit)", edit_meeting_book_path(@meeting, book) %></p>
+    <p>Book Title: <%= book.title %>
+    <% if current_user == book.user %>
+        <%= link_to "(edit)", edit_meeting_book_path(@meeting, book) %></p>
+    <% else %>
+        </p>
+    <% end %>
     <p>Author: <%= book.author %> </p>
     <p>Genre: <%= book.genre %> </p>
     <img src = "<%= book.photo_url %>">
     <p><%= book.description %></p>
     <a href = "<%= book.link %>" > Read More </a>
+    <h3> Review <%= link_to "(+)", new_book_review_path(book) %></h3>
+
     <% book.reviews.each do |review| %>
     <hr>
-    <h3> Review <%= link_to "(+)", new_book_review_path(book) %></h3>
     <p> Rating: <%= review.rating %>
       <% if current_user == review.user %>
         <%= link_to "(Edit)", edit_book_review_path(book, review) %> </p>

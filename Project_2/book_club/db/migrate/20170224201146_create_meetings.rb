@@ -7,6 +7,7 @@ class CreateMeetings < ActiveRecord::Migration[5.0]
       t.references :member, foreign_key: true
       t.references :book, foreign_key: true
       t.references :club, foreign_key: true
+      t.references :user, foreign_key: true
     end
   end
 end

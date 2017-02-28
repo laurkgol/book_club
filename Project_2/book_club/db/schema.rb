@@ -22,14 +22,18 @@ ActiveRecord::Schema.define(version: 20170228142157) do
     t.string  "rating"
     t.integer "club_id"
     t.integer "meeting_id"
+    t.integer "user_id"
     t.index ["club_id"], name: "index_books_on_club_id"
     t.index ["meeting_id"], name: "index_books_on_meeting_id"
+    t.index ["user_id"], name: "index_books_on_user_id"
   end
 
   create_table "clubs", force: :cascade do |t|
-    t.string "name"
-    t.string "start_date"
-    t.string "end_date"
+    t.string  "name"
+    t.string  "start_date"
+    t.string  "end_date"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_clubs_on_user_id"
   end
 
   create_table "meetings", force: :cascade do |t|
@@ -39,9 +43,11 @@ ActiveRecord::Schema.define(version: 20170228142157) do
     t.integer "member_id"
     t.integer "book_id"
     t.integer "club_id"
+    t.integer "user_id"
     t.index ["book_id"], name: "index_meetings_on_book_id"
     t.index ["club_id"], name: "index_meetings_on_club_id"
     t.index ["member_id"], name: "index_meetings_on_member_id"
+    t.index ["user_id"], name: "index_meetings_on_user_id"
   end
 
   create_table "members", force: :cascade do |t|
@@ -54,7 +60,9 @@ ActiveRecord::Schema.define(version: 20170228142157) do
     t.string  "zip"
     t.string  "photo_url"
     t.integer "club_id"
+    t.integer "user_id"
     t.index ["club_id"], name: "index_members_on_club_id"
+    t.index ["user_id"], name: "index_members_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|

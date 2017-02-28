@@ -14,7 +14,7 @@ class MembersController < ApplicationController
 
   def create
     @club = Club.find(params[:club_id])
-    @club.members.create(member_params)
+    @club.members.create(member_params.merge(user: current_user))
     redirect_to club_path(@club)
   end
 
@@ -26,7 +26,12 @@ class MembersController < ApplicationController
   def update
     @club = Club.find(params[:club_id])
     @member = Member.find(params[:id])
-    @member.update(member_params)
+    if @member.user == current_user
+        @member.update(member_params)
+    else
+      flash[:alert] = "Only the creater can edit"
+    end
+
     redirect_to club_member_path(@club, @member)
 
   end
@@ -34,7 +39,11 @@ class MembersController < ApplicationController
   def destroy
     @club = Club.find(params[:club_id])
     @member = Member.find(params[:id])
+    if @member.user == current_user
     @member.destroy
+  else
+    flash[:alert] = "Only creater delete"
+  end
     redirect_to club_path(@club)
   end
 

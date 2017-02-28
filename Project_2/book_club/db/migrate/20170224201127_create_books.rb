@@ -10,6 +10,7 @@ class CreateBooks < ActiveRecord::Migration[5.0]
       t.string :rating
       t.references :club, foreign_key: true
       t.references :meeting, foreign_key: true
+      t.references :user, foreign_key: true
     end
   end
 end

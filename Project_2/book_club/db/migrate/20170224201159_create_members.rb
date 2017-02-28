@@ -10,6 +10,7 @@ class CreateMembers < ActiveRecord::Migration[5.0]
       t.string :zip
       t.string :photo_url
       t.references :club, foreign_key: true
+      t.references :user, foreign_key: true
     end
   end
 end
