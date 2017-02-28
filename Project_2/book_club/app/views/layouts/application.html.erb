@@ -12,7 +12,7 @@
   <body>
     <div id = "wrapper">
       <nav>
-        <h1 id = "title">BookClub <%= image_tag('books.png', :class => 'logo', :id => 'books') %> <%= image_tag('wine.png', :class => 'logo', :id => 'wine')  %></h1>
+        <h1 id = "title"><%= link_to "BookClub", root_path %> <%= image_tag('books.png', :class => 'logo', :id => 'books') %> <%= image_tag('wine.png', :class => 'logo', :id => 'wine')  %></h1>
 
         <div class = "sign" >
             <% if !current_user %>

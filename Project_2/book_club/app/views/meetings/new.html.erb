@@ -1,5 +1,6 @@
-<main>
+<div class = "club">
   <h1> <%= link_to @club.name, club_path(@club) %> </h1>
+</div>
   <h2>New Meeting</h2>
   <ul>
     <%= form_for [@club, @meeting] do |f| %>
@@ -14,5 +15,6 @@
 
       <li><%= f.submit %></li>
     <% end %>
+
+    
   </ul>
-</main>

@@ -30,11 +30,14 @@ main{
 .meetings{
 
 }
-
+#b{
+  font-style: italic;
+}
 .add{
   background-color: #19CBFF;
   text-align: center;
   padding: 10pt;
+  margin: 10pt;
 }
 a {
   text-decoration: none;
@@ -46,6 +49,13 @@ hr {
 .member_photo{
   width: 100pt;
   margin: 10pt;
+}
+.review{
+  border-style: solid;
+  border-color: #B23057;
+  border-width: 1pt;
+  padding: 10pt;
+  background-color: hsla(342, 58%, 44%, 0.34);
 }
 h1{
   font-size: 20pt;
@@ -81,6 +91,9 @@ nav, footer{
 
 nav{
   margin-bottom: 20pt;
+}
+footer{
+  margin-top: 20pt;
 }
 .sign{
   text-align: left;

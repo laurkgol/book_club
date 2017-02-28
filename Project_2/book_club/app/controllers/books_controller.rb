@@ -5,6 +5,10 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+    @sum_rating = @book.reviews.reduce do |sum, rating|
+      sum + rating
+    end
+    @average_rating = @sum_rating / @book.reviews.length
     @meeting = Meeting.find(@book.meeting_id)
     @club = Club.find(@book.club_id)
   end

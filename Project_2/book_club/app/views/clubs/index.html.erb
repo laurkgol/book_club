@@ -1,4 +1,4 @@
-<main>
+
     <h2>Select your Book Club</h2>
     <ul>
       <% @clubs.each do |club| %>
@@ -7,8 +7,7 @@
         </li>
       <% end %>
     </ul>
-  </main>
 
-  <div = "create">
-    <h3><%= link_to "Create New Book Club", new_club_path %></h3>
+  <div class= "add">
+    <%= link_to "Create New Book Club", new_club_path %>
   </div>
