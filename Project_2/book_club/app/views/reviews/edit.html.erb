@@ -1,0 +1,19 @@
+<main>
+  <h2>Edit Review</h2>
+  <ul>
+    <%= form_for [@book, @review] do |f| %>
+    <li><%= f.label :rating %></li>
+    <li><%= f.text_field :rating %></li>
+
+    <li><%= f.label :comment %></li>
+    <li><%= f.text_field :comment %></li>
+
+      <li><%= f.submit %></li>
+
+  <% end %>
+
+  <%= form_for [@book, @review], method: :delete do |f| %>
+  <li>  <%= f.submit "Delete", class: "delete" %></li>
+  <% end %>
+  </ul>
+</main>

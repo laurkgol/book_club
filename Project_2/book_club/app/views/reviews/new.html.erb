@@ -1,0 +1,14 @@
+<main>
+  <h2>New Review for <%= @book.title%></h2>
+  <ul>
+    <%= form_for [@book, @review] do |f| %>
+      <li><%= f.label :rating %></li>
+      <li><%= f.text_field :rating %></li>
+
+      <li><%= f.label :comment %></li>
+      <li><%= f.text_field :comment %></li>
+
+      <li><%= f.submit %></li>
+    <% end %>
+  </ul>
+</main>

@@ -21,10 +21,11 @@
     <li><%= f.text_field :genre %></li>
 
       <li><%= f.submit %></li>
-  </ul>
+
   <% end %>
 
   <%= form_for [@club, @meeting], method: :delete do |f| %>
-    <%= f.submit "Delete", class: "delete" %>
+  <li>  <%= f.submit "Delete", class: "delete" %></li>
   <% end %>
+  </ul>
 </main>

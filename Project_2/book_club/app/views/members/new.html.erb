@@ -1,6 +1,6 @@
 <main>
   <h1> <%= link_to @club.name, club_path(@club) %> </h1>
-  <h2>New Meeting</h2>
+  <h2>New Member</h2>
   <ul>
     <%= form_for [@club, @member] do |f| %>
       <li><%= f.label :name %></li>

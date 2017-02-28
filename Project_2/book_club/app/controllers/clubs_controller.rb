@@ -26,6 +26,11 @@ class ClubsController < ApplicationController
 
   def destroy
     @club = Club.find(params[:id])
+    if @club.user == current_user
+    @club.destroy
+  else
+    flash[:alert] = "Only the owner of this club can delete"
+  end
     @club.destroy
 
     redirect_to root_path

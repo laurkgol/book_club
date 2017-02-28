@@ -1,16 +1,17 @@
 <div class = "club">
   <h1><%= @club.name %> <%= link_to "(Edit)", edit_club_path %></h1>
+  <p> Start date: <%= @club.start_date %> 
 </div>
 <div class = "meetings">
   <h2>Meetings <%= link_to "(+)", new_club_meeting_path(@club) %></h2>
   <ul>
   <% @club.meetings.each do |meeting|%>
-    <h2> Date: <%= link_to meeting.date, club_meeting_path(@club, meeting) %></h2>
+    <h3> Date: <%= link_to meeting.date, club_meeting_path(@club, meeting) %></h3>
     <p> Host: <%= meeting.host %>
     <% @club.members.each do |member| %>
       <% meeting.books.each do |book| %>
 
-      <h2> Book: <%= book.title %> <%= link_to "Edit", edit_meeting_book_path(meeting, book) %></h2>
+      <h3> Book: <%= book.title %> <%= link_to "Edit", edit_meeting_book_path(meeting, book) %></h3>
       <p> Author: <%= book.author %> </p>
       <p> Genre: <%= book.genre %> </p>
       <div class = "book_table">
