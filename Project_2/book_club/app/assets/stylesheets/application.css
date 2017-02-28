@@ -14,22 +14,35 @@
  *= require_self
  */
 main{
-  margin-left: 20pt;
-  margin-right: 20pt;
+  margin-left: 150pt;
+  margin-right: 150pt;
   display: flex;
   flex-direction: column;
   border-style: solid;
   border-color: #B23057;
   border-width: 1pt;
-  padding: 20pt;
+  padding: 60pt;
 }
 /*.rows{
   display: flex;
   flex-direction: row;
 }*/
-.meetings{
+.meeting_flex{
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+}
+.row{
 
 }
+/*.meetings{
+  display: inline-block;
+  width: 75%;
+}
+.members{
+  display: inline-block;
+  width: 15%
+}*/
 #b{
   font-style: italic;
 }
@@ -82,7 +95,7 @@ body{
 }
 
 nav, footer{
-  padding: 10pt;
+  padding: 5pt;
   background-color: #FFEC00;
   width: 100%;
   text-align: center;
@@ -97,6 +110,9 @@ footer{
 }
 .sign{
   text-align: left;
+  margin-left: 150pt;
+  margin-right: 150pt;
+  margin-top:0;
 }
 .create{
   padding: 10pt;

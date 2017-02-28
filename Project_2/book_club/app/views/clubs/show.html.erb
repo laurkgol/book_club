@@ -11,24 +11,28 @@
   <div class = "rows">
     <div class = "meetings">
       <h2>Meetings </h2>
-
       <hr class = "big_line">
       <% @club.meetings.each do |meeting|%>
-        <h3> <%= link_to "Meeting on #{meeting.date}" , club_meeting_path(@club, meeting) %></h3>
-        <p> Host: <%= meeting.host %> </p>
-        <% meeting.books.each do |book| %>
-          <p> Book: <%= book.title %> </p>
-          <div class = "book_photo">
+      <div class = "meeting_flex">
+          <div class = "meeting_info">
+              <h3> <%= link_to "Meeting on #{meeting.date}" , club_meeting_path(@club, meeting) %></h3>
+              <p> Host: <%= meeting.host %> </p>
+              <% meeting.books.each do |book| %>
+              <p> Book: <%= book.title %> </p>
+            </div>
+            <div class = "book_photo">
               <%= image_tag book.photo_url %>
             </div>
+        </div>
             <hr>
             <% end %>
           <% end %>
-          </div>
+
           <div class = "add">
             <%= link_to "Add Meeting", new_club_meeting_path(@club) %>
           </div>
-          <hr>
+        </div>
+
         <div class = "members">
           <h2>Members</h2>
           <% @club.members.each do |member|%>
@@ -38,9 +42,9 @@
             </div>
               <hr>
           <% end %>
-          </div>
-          <div class = "add">
+
+        <div class = "add">
             <%= link_to "Add Members", new_club_member_path(@club) %>
-          </div>
         </div>
-    </div>
+      </div>
+  </div>
