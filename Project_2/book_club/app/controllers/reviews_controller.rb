@@ -16,10 +16,11 @@ class ReviewsController < ApplicationController
 
   def create
     @book = Book.find(params[:book_id])
+    @meeting = Meeting.find(@book.meeting_id)
     @club = Club.find(@book.club_id)
    @book.reviews.create(review_params.merge(user: current_user))
 
-    redirect_to book_path(@book)
+    redirect_to meeting_path(@meeting)
 end
 
 def edit

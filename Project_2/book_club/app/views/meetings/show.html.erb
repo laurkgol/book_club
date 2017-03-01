@@ -1,7 +1,7 @@
-<main>
-<h2> <%= link_to @club.name, club_path(@club) %> </h2>
-
-<h3> Meeting: <%= @meeting.id %>
+<div class = "club">
+  <h1> <%= link_to @club.name, club_path(@club) %> </h1>
+</div>
+<h2> Meeting on  <%= @meeting.date %> </h2>
   <% if current_user == @meeting.user %>
     <%= link_to "(edit)", edit_club_meeting_path(@club) %></h3>
   <% else %>
@@ -19,23 +19,32 @@
     <% end %>
     <p>Author: <%= book.author %> </p>
     <p>Genre: <%= book.genre %> </p>
-    <img src = "<%= book.photo_url %>">
+    <div class = "book_photo">
+      <img src = "<%= book.photo_url %>">
+    </div>
     <p><%= book.description %></p>
     <a href = "<%= book.link %>" > Read More </a>
-    <h3> Review <%= link_to "(+)", new_book_review_path(book) %></h3>
-
+    <h3> Review </h3>
+    <div class = "add">
+      <%= link_to "Add Review", new_book_review_path(book) %>
+    </div>
     <% book.reviews.each do |review| %>
-    <hr>
-    <p> Rating: <%= review.rating %>
+    <div class = "review">
+    <p> Created: <%= review.created_at %>
       <% if current_user == review.user %>
         <%= link_to "(Edit)", edit_book_review_path(book, review) %> </p>
       <% else %>
         </p>
     <% end %>
+    <p>Rating: <%= review.rating %>
     <p> Comment: <%= review.comment %></p>
+    <hr>
+    </div>
     <% end %>
+
     <hr>
 <% end %>
 
-<h2> <%= link_to "Add Book", new_meeting_book_path(@meeting) %></h2>
-</main>
+<div class = "add">
+  <%= link_to "Add Book", new_meeting_book_path(@meeting) %>
+</div>

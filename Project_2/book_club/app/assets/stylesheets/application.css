@@ -160,3 +160,12 @@ input[type: text]{
 
 #wrapper{
 }
+.member_table{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.review{
+  background-color: hsla(342, 58%, 44%, 0.35);
+}
