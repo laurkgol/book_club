@@ -1,0 +1,2422 @@
+Started GET "/clubs/1" for ::1 at 2017-03-01 17:23:48 -0500
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.1) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.1) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (96.5ms)
+DEPRECATION WARNING: Passing #original_exception is deprecated and has no effect. Exceptions will automatically capture the original exception. (called from block in execute at /Users/lauragoldstein/.rvm/gems/ruby-2.4.0@global/gems/rake-12.0.0/lib/rake/task.rb:250)
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateClubs (20170224194311)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "clubs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "start_date" varchar, "end_date" varchar, "user_id" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_clubs_on_user_id" ON "clubs" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170224194311"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateBooks (20170224201127)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "author" varchar, "photo_url" varchar, "description" varchar, "link" varchar, "genre" varchar, "rating" varchar, "club_id" integer, "meeting_id" integer, "user_id" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_books_on_club_id" ON "books" ("club_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_books_on_club_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_books_on_club_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_books_on_meeting_id" ON "books" ("meeting_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_books_on_meeting_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_books_on_meeting_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_books_on_club_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_books_on_club_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_books_on_user_id" ON "books" ("user_id")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170224201127"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateMeetings (20170224201146)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "meetings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" varchar, "location" varchar, "host" varchar, "member_id" integer, "book_id" integer, "club_id" integer, "user_id" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_meetings_on_member_id" ON "meetings" ("member_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_meetings_on_member_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_meetings_on_member_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_meetings_on_book_id" ON "meetings" ("book_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_meetings_on_book_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_meetings_on_book_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_meetings_on_member_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_meetings_on_member_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_meetings_on_club_id" ON "meetings" ("club_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_meetings_on_club_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_meetings_on_club_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_meetings_on_book_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_meetings_on_book_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_meetings_on_member_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_meetings_on_member_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_meetings_on_user_id" ON "meetings" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170224201146"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateMembers (20170224201159)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "members" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "street_address" varchar, "street_address_2" varchar, "city" varchar, "state" varchar, "zip" varchar, "photo_url" varchar, "club_id" integer, "user_id" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_members_on_club_id" ON "members" ("club_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_members_on_club_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_members_on_club_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_members_on_user_id" ON "members" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170224201159"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to DeviseCreateUsers (20170227204254)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170227204254"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateReviews (20170228142157)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "rating" integer, "comment" varchar, "user_id" integer, "book_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_reviews_on_user_id" ON "reviews" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_reviews_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_reviews_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_reviews_on_book_id" ON "reviews" ("book_id")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170228142157"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-01 22:24:12 UTC], ["updated_at", 2017-03-01 22:24:12 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_books_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_books_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_books_on_meeting_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_books_on_meeting_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_books_on_club_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_books_on_club_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_clubs_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_clubs_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_meetings_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_meetings_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_meetings_on_club_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_meetings_on_club_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_meetings_on_book_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_meetings_on_book_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_meetings_on_member_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_meetings_on_member_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_members_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_members_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_members_on_club_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_members_on_club_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_reviews_on_book_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_reviews_on_book_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_reviews_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_reviews_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mClub Load (0.2ms)[0m  [1m[34mSELECT "clubs".* FROM "clubs"[0m
+  [1m[36mMeeting Load (0.2ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings"[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "test@email.com"], ["encrypted_password", "$2a$11$QGoCLJKf.dlA8V5OJJSY6OeTwNYLQrW4kgfFwjprfYb9kzDkxqqkC"], ["created_at", 2017-03-01 22:24:12 UTC], ["updated_at", 2017-03-01 22:24:12 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "clubs" ("name", "start_date") VALUES (?, ?)[0m  [["name", "DC Book Club"], ["start_date", "1/1/16"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "meetings" ("date", "location", "host", "member_id", "book_id", "club_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["date", "1/2/17"], ["location", "Navy Yard"], ["host", "Laura Goldstein"], ["member_id", 1], ["book_id", 1], ["club_id", 1]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "meetings" ("date", "location", "host", "member_id", "book_id", "club_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["date", "3/26/17"], ["location", "Adams Morgan"], ["host", "Susan Poklemba"], ["member_id", 2], ["book_id", 2], ["club_id", 1]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "photo_url", "description", "link", "genre", "club_id", "meeting_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Super Sad True Love Story"], ["author", "Gary Shteyngart"], ["photo_url", "https://upload.wikimedia.org/wikipedia/en/5/57/Super_Sad_True_Love_Story_book_cover.jpg"], ["description", "The author of two critically acclaimed novels, The Russian Debutante’s Handbook and Absurdistan, Gary Shteyngart has risen to the top of the fiction world. Now, in his hilarious and heartfelt new novel, he envisions a deliciously dark tale of America’s dysfunctional coming years—and the timeless and tender feelings that just might bring us back from the brink."], ["link", "http://www.goodreads.com/book/show/7334201-super-sad-true-love-story"], ["genre", "fiction"], ["club_id", 1], ["meeting_id", 1]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "photo_url", "description", "link", "genre", "club_id", "meeting_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Tokyo Vice"], ["author", "Jake Adelstein"], ["photo_url", "https://images.gr-assets.com/books/1320453731l/6658129.jpg"], ["description", "From the only American journalist ever to have been admitted to the insular Tokyo Metropolitan Police press club: a unique, firsthand, revelatory look at Japanese culture from the underbelly up."], ["link", "https://www.goodreads.com/book/show/6658129-tokyo-vice"], ["genre", "non-fiction"], ["club_id", 1], ["meeting_id", 2]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "members" ("name", "email", "street_address", "city", "state", "zip", "photo_url", "club_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Laura Goldstein"], ["email", "laurag@email.com"], ["street_address", "11 South Capitol St, SW"], ["city", "Washington"], ["state", "DC"], ["zip", "20003"], ["photo_url", "https://scontent-iad3-1.xx.fbcdn.net/v/t1.0-9/13445550_10104672628192498_1008526753107764760_n.jpg?oh=9b467918c4cbcb997e628c7ee94a526e&oe=5938CBD0"], ["club_id", 1]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "members" ("name", "email", "street_address", "city", "state", "zip", "photo_url", "club_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Susan Poklemba"], ["email", "susan@email.com"], ["street_address", "5 Columbia Road"], ["city", "Washington"], ["state", "DC"], ["zip", "20005"], ["photo_url", "https://scontent-sjc2-1.xx.fbcdn.net/v/t1.0-1/p160x160/15590046_10105555390429898_6512084356769845760_n.jpg?oh=d8a3264085cc5950e4e1d8fc13096400&oe=59339F25"], ["club_id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "comment", "user_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 5], ["comment", "great book!"], ["user_id", 1], ["book_id", 1], ["created_at", 2017-03-01 22:24:12 UTC], ["updated_at", 2017-03-01 22:24:12 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/clubs/1" for ::1 at 2017-03-01 17:24:19 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ClubsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 38ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-03-01 17:24:19 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (29.6ms)
+Completed 200 OK in 1075ms (Views: 1072.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2017-03-01 17:24:29 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 54ms (Views: 51.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-03-01 17:24:31 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (2.9ms)
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 68ms (Views: 66.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2017-03-01 17:24:38 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CkOy8vURfpfD8tm4UFhEJemcpAc9GvTWDKfj6QWr4YHNeqr2C6TgBPvVkQCoXSHxp5x5wukVKK7I+0qbOVyeOg==", "user"=>{"email"=>"test@email.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2017-03-01 22:24:38 UTC], ["last_sign_in_at", 2017-03-01 22:24:38 UTC], ["current_sign_in_ip", "::1"], ["last_sign_in_ip", "::1"], ["sign_in_count", 1], ["updated_at", 2017-03-01 22:24:38 UTC], ["id", 1]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/clubs/1
+Completed 302 Found in 208ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/clubs/1" for ::1 at 2017-03-01 17:24:38 -0500
+Processing by ClubsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.2ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clubs/show.html.erb within layouts/application
+  [1m[36mMeeting Load (0.2ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings" WHERE "meetings"."club_id" = ?[0m  [["club_id", 1]]
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 2]]
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."club_id" = ?[0m  [["club_id", 1]]
+  Rendered clubs/show.html.erb within layouts/application (110.5ms)
+Completed 200 OK in 173ms (Views: 146.4ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/clubs/1/meetings/new" for ::1 at 2017-03-01 17:25:15 -0500
+Processing by MeetingsController#new as HTML
+  Parameters: {"club_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.2ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering meetings/new.html.erb within layouts/application
+  Rendered meetings/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 48ms (Views: 37.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/clubs/1/meetings" for ::1 at 2017-03-01 17:25:18 -0500
+Processing by MeetingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xOp5mh8hwaMiyMhclzkem/b7HL3vJ/8M6qSJiGDSBSxbrTQQrPJg7GwW5tuWCvVjwVN9kjez/95q5Db92K02tQ==", "meeting"=>{"date"=>"asda", "host"=>"", "location"=>""}, "commit"=>"Create Meeting", "club_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.2ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/clubs/1
+Completed 302 Found in 12ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/clubs/1" for ::1 at 2017-03-01 17:25:18 -0500
+Processing by ClubsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.1ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clubs/show.html.erb within layouts/application
+  [1m[36mMeeting Load (0.2ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings" WHERE "meetings"."club_id" = ?[0m  [["club_id", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 2]]
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."club_id" = ?[0m  [["club_id", 1]]
+  Rendered clubs/show.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 43ms (Views: 36.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/clubs/1/meetings/new" for ::1 at 2017-03-01 17:26:19 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MeetingsController#new as HTML
+  Parameters: {"club_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.4ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering meetings/new.html.erb within layouts/application
+  Rendered meetings/new.html.erb within layouts/application (33.8ms)
+Completed 200 OK in 393ms (Views: 307.2ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/clubs/1/meetings" for ::1 at 2017-03-01 17:26:22 -0500
+Processing by MeetingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0m8HrhpKHya+JYSmTrvm1qiR+eJfWzglQC/r4Wshvz1/Zb9Sp4RBb0P04PAf+5C7fIZ5A8DNVkht/VM51CkybQ==", "meeting"=>{"date"=>"ada", "host"=>"", "location"=>""}, "commit"=>"Create Meeting", "club_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.1ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 13ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Member must exist):
+  
+app/controllers/meetings_controller.rb:14:in `create'
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.1ms)
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (100.9ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateClubs (20170224194311)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "clubs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "start_date" varchar, "end_date" varchar, "user_id" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_clubs_on_user_id" ON "clubs" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170224194311"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateBooks (20170224201127)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "author" varchar, "photo_url" varchar, "description" varchar, "link" varchar, "genre" varchar, "rating" varchar, "club_id" integer, "meeting_id" integer, "user_id" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_books_on_club_id" ON "books" ("club_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_books_on_club_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_books_on_club_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_books_on_meeting_id" ON "books" ("meeting_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_books_on_meeting_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_books_on_meeting_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_books_on_club_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_books_on_club_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_books_on_user_id" ON "books" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170224201127"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateMeetings (20170224201146)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "meetings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" varchar, "location" varchar, "host" varchar, "book_id" integer, "club_id" integer, "user_id" integer)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_meetings_on_book_id" ON "meetings" ("book_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_meetings_on_book_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_meetings_on_book_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_meetings_on_club_id" ON "meetings" ("club_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_meetings_on_club_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_meetings_on_club_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_meetings_on_book_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_meetings_on_book_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_meetings_on_user_id" ON "meetings" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170224201146"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateMembers (20170224201159)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "members" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "street_address" varchar, "street_address_2" varchar, "city" varchar, "state" varchar, "zip" varchar, "photo_url" varchar, "club_id" integer, "user_id" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_members_on_club_id" ON "members" ("club_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_members_on_club_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_members_on_club_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_members_on_user_id" ON "members" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170224201159"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to DeviseCreateUsers (20170227204254)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170227204254"]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateReviews (20170228142157)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "rating" integer, "comment" varchar, "user_id" integer, "book_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_reviews_on_user_id" ON "reviews" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_reviews_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_reviews_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_reviews_on_book_id" ON "reviews" ("book_id")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170228142157"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-01 22:27:05 UTC], ["updated_at", 2017-03-01 22:27:05 UTC]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_books_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_books_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_books_on_meeting_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_books_on_meeting_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_books_on_club_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_books_on_club_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_clubs_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_clubs_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_meetings_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_meetings_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_meetings_on_club_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_meetings_on_club_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_meetings_on_book_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_meetings_on_book_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_members_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_members_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_members_on_club_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_members_on_club_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_reviews_on_book_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_reviews_on_book_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_reviews_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_reviews_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mClub Load (0.3ms)[0m  [1m[34mSELECT "clubs".* FROM "clubs"[0m
+  [1m[36mMeeting Load (0.2ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings"[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "test@email.com"], ["encrypted_password", "$2a$11$sATt86g.q6iZoMt4CgD8seW35Ukhb5s8QekzXEoF3wkzmD.7/DE8a"], ["created_at", 2017-03-01 22:27:05 UTC], ["updated_at", 2017-03-01 22:27:05 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "clubs" ("name", "start_date") VALUES (?, ?)[0m  [["name", "DC Book Club"], ["start_date", "1/1/16"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateClubs (20170224194311)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "clubs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "start_date" varchar, "end_date" varchar, "user_id" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_clubs_on_user_id" ON "clubs" ("user_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170224194311"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateBooks (20170224201127)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "author" varchar, "photo_url" varchar, "description" varchar, "link" varchar, "genre" varchar, "rating" varchar, "club_id" integer, "meeting_id" integer, "user_id" integer)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX "index_books_on_club_id" ON "books" ("club_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_books_on_club_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_books_on_club_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_books_on_meeting_id" ON "books" ("meeting_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_books_on_meeting_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_books_on_meeting_id' AND type='index'
+[0m
+  [1m[35m (0.5ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_books_on_club_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_books_on_club_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_books_on_user_id" ON "books" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170224201127"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateMeetings (20170224201146)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "meetings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" varchar, "location" varchar, "host" varchar, "book_id" integer, "club_id" integer, "user_id" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_meetings_on_book_id" ON "meetings" ("book_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_meetings_on_book_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_meetings_on_book_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_meetings_on_club_id" ON "meetings" ("club_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_meetings_on_club_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_meetings_on_club_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_meetings_on_book_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_meetings_on_book_id' AND type='index'
+[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX "index_meetings_on_user_id" ON "meetings" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170224201146"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateMembers (20170224201159)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "members" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "street_address" varchar, "street_address_2" varchar, "city" varchar, "state" varchar, "zip" varchar, "photo_url" varchar, "club_id" integer, "user_id" integer)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_members_on_club_id" ON "members" ("club_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_members_on_club_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_members_on_club_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_members_on_user_id" ON "members" ("user_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170224201159"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to DeviseCreateUsers (20170227204254)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170227204254"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateReviews (20170228142157)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "rating" integer, "comment" varchar, "user_id" integer, "book_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_reviews_on_user_id" ON "reviews" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_reviews_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_reviews_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_reviews_on_book_id" ON "reviews" ("book_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170228142157"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-01 22:27:45 UTC], ["updated_at", 2017-03-01 22:27:45 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_books_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_books_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_books_on_meeting_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_books_on_meeting_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_books_on_club_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_books_on_club_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_clubs_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_clubs_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_meetings_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_meetings_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_meetings_on_club_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_meetings_on_club_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_meetings_on_book_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_meetings_on_book_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_members_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_members_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_members_on_club_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_members_on_club_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_reviews_on_book_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_reviews_on_book_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_reviews_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_reviews_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mClub Load (0.2ms)[0m  [1m[34mSELECT "clubs".* FROM "clubs"[0m
+  [1m[36mMeeting Load (0.2ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings"[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "test@email.com"], ["encrypted_password", "$2a$11$8NDpg0UZOggHNaJlSje4LOHVgh/UbNbqQZ7sdDM7pQxGAKD1lb6ky"], ["created_at", 2017-03-01 22:27:45 UTC], ["updated_at", 2017-03-01 22:27:45 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "clubs" ("name", "start_date") VALUES (?, ?)[0m  [["name", "DC Book Club"], ["start_date", "1/1/16"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "meetings" ("date", "location", "host", "book_id", "club_id") VALUES (?, ?, ?, ?, ?)[0m  [["date", "1/2/17"], ["location", "Navy Yard"], ["host", "Laura Goldstein"], ["book_id", 1], ["club_id", 1]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "meetings" ("date", "location", "host", "book_id", "club_id") VALUES (?, ?, ?, ?, ?)[0m  [["date", "3/26/17"], ["location", "Adams Morgan"], ["host", "Susan Poklemba"], ["book_id", 2], ["club_id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "photo_url", "description", "link", "genre", "club_id", "meeting_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Super Sad True Love Story"], ["author", "Gary Shteyngart"], ["photo_url", "https://upload.wikimedia.org/wikipedia/en/5/57/Super_Sad_True_Love_Story_book_cover.jpg"], ["description", "The author of two critically acclaimed novels, The Russian Debutante’s Handbook and Absurdistan, Gary Shteyngart has risen to the top of the fiction world. Now, in his hilarious and heartfelt new novel, he envisions a deliciously dark tale of America’s dysfunctional coming years—and the timeless and tender feelings that just might bring us back from the brink."], ["link", "http://www.goodreads.com/book/show/7334201-super-sad-true-love-story"], ["genre", "fiction"], ["club_id", 1], ["meeting_id", 1]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "photo_url", "description", "link", "genre", "club_id", "meeting_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Tokyo Vice"], ["author", "Jake Adelstein"], ["photo_url", "https://images.gr-assets.com/books/1320453731l/6658129.jpg"], ["description", "From the only American journalist ever to have been admitted to the insular Tokyo Metropolitan Police press club: a unique, firsthand, revelatory look at Japanese culture from the underbelly up."], ["link", "https://www.goodreads.com/book/show/6658129-tokyo-vice"], ["genre", "non-fiction"], ["club_id", 1], ["meeting_id", 2]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "members" ("name", "email", "street_address", "city", "state", "zip", "photo_url", "club_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Laura Goldstein"], ["email", "laurag@email.com"], ["street_address", "11 South Capitol St, SW"], ["city", "Washington"], ["state", "DC"], ["zip", "20003"], ["photo_url", "https://scontent-iad3-1.xx.fbcdn.net/v/t1.0-9/13445550_10104672628192498_1008526753107764760_n.jpg?oh=9b467918c4cbcb997e628c7ee94a526e&oe=5938CBD0"], ["club_id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "members" ("name", "email", "street_address", "city", "state", "zip", "photo_url", "club_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Susan Poklemba"], ["email", "susan@email.com"], ["street_address", "5 Columbia Road"], ["city", "Washington"], ["state", "DC"], ["zip", "20005"], ["photo_url", "https://scontent-sjc2-1.xx.fbcdn.net/v/t1.0-1/p160x160/15590046_10105555390429898_6512084356769845760_n.jpg?oh=d8a3264085cc5950e4e1d8fc13096400&oe=59339F25"], ["club_id", 1]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "comment", "user_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 5], ["comment", "great book!"], ["user_id", 1], ["book_id", 1], ["created_at", 2017-03-01 22:27:45 UTC], ["updated_at", 2017-03-01 22:27:45 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/clubs/1/meetings" for ::1 at 2017-03-01 17:27:52 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MeetingsController#index as HTML
+  Parameters: {"club_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 60ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-03-01 17:27:52 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (2.4ms)
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (28.6ms)
+Completed 200 OK in 290ms (Views: 287.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2017-03-01 17:28:00 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0hHqtY4PoB+OHU1CEBA2r4tE4dlFzgmceCUiz20dVHd/G1JJM8H+VnPMKRRBUEDCX1NhONpYZ/FV95oX0hXZJw==", "user"=>{"email"=>"test@email.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2017-03-01 22:28:00 UTC], ["last_sign_in_at", 2017-03-01 22:28:00 UTC], ["current_sign_in_ip", "::1"], ["last_sign_in_ip", "::1"], ["sign_in_count", 1], ["updated_at", 2017-03-01 22:28:00 UTC], ["id", 1]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/clubs/1/meetings
+Completed 302 Found in 210ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/clubs/1/meetings" for ::1 at 2017-03-01 17:28:00 -0500
+Processing by MeetingsController#index as HTML
+  Parameters: {"club_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering meetings/index.html.erb within layouts/application
+  Rendered meetings/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 48ms (Views: 31.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2017-03-01 17:28:03 -0500
+Processing by ClubsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clubs/index.html.erb within layouts/application
+  [1m[36mClub Load (0.3ms)[0m  [1m[34mSELECT "clubs".* FROM "clubs"[0m
+  Rendered clubs/index.html.erb within layouts/application (30.4ms)
+Completed 200 OK in 79ms (Views: 62.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/clubs/1" for ::1 at 2017-03-01 17:28:04 -0500
+Processing by ClubsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.6ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clubs/show.html.erb within layouts/application
+  [1m[36mMeeting Load (0.3ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings" WHERE "meetings"."club_id" = ?[0m  [["club_id", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 2]]
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."club_id" = ?[0m  [["club_id", 1]]
+  Rendered clubs/show.html.erb within layouts/application (91.0ms)
+Completed 200 OK in 147ms (Views: 133.3ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/clubs/1/meetings/1" for ::1 at 2017-03-01 17:28:07 -0500
+Processing by MeetingsController#show as HTML
+  Parameters: {"club_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeeting Load (0.2ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.1ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.9ms)
+
+
+  
+NoMethodError (undefined method `member_id' for #<Meeting:0x007ff9a242fbf0>
+Did you mean?  member
+               member=):
+  
+app/controllers/meetings_controller.rb:22:in `show'
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.1ms)
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (100.6ms)
+Started GET "/clubs/1/meetings/1" for ::1 at 2017-03-01 17:28:41 -0500
+Processing by MeetingsController#show as HTML
+  Parameters: {"club_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeeting Load (0.3ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.2ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering meetings/show.html.erb within layouts/application
+  Rendered meetings/show.html.erb within layouts/application (6.9ms)
+Completed 500 Internal Server Error in 91ms (ActiveRecord: 3.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+     7:   <% else %>
+     8:       </h1>
+     9:   <% end %>
+    10: <p> Host: <%= @member.name%></p>
+    11: <p> Location:<p>
+    12:   <p><%= @member.street_address%></p>
+    13: <p><%= @member.street_address_2%></p>
+  
+app/views/meetings/show.html.erb:10:in `_app_views_meetings_show_html_erb__3441538475891257210_70355117299720'
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.8ms)
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (96.7ms)
+Started GET "/clubs/1/meetings/1" for ::1 at 2017-03-01 17:29:46 -0500
+Processing by MeetingsController#show as HTML
+  Parameters: {"club_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeeting Load (0.3ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.1ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering meetings/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered meetings/show.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 121ms (Views: 92.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/clubs/1" for ::1 at 2017-03-01 17:29:54 -0500
+Processing by ClubsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.2ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clubs/show.html.erb within layouts/application
+  [1m[36mMeeting Load (0.6ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings" WHERE "meetings"."club_id" = ?[0m  [["club_id", 1]]
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 2]]
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."club_id" = ?[0m  [["club_id", 1]]
+  Rendered clubs/show.html.erb within layouts/application (77.5ms)
+Completed 200 OK in 123ms (Views: 109.8ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/clubs/1/meetings/new" for ::1 at 2017-03-01 17:29:56 -0500
+Processing by MeetingsController#new as HTML
+  Parameters: {"club_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.2ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering meetings/new.html.erb within layouts/application
+  Rendered meetings/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 57ms (Views: 45.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/clubs/1/meetings" for ::1 at 2017-03-01 17:29:58 -0500
+Processing by MeetingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"roWl0Lh7j0uJEyJZyCZ1U7UbUIFAcHNCNG2Rx4Dzy9LSMBprzfml7No9r2tDi6jL6Q5tUSpcBoAoUEmh/ZNozA==", "meeting"=>{"date"=>"adsa", "host"=>"", "location"=>""}, "commit"=>"Create Meeting", "club_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.1ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 11ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Member must exist):
+  
+app/controllers/meetings_controller.rb:14:in `create'
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.1ms)
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (89.7ms)
+Started GET "/clubs/1/meetings" for ::1 at 2017-03-01 17:30:54 -0500
+Processing by MeetingsController#index as HTML
+  Parameters: {"club_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering meetings/index.html.erb within layouts/application
+  Rendered meetings/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 46ms (Views: 41.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-03-01 17:30:56 -0500
+Processing by ClubsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clubs/index.html.erb within layouts/application
+  [1m[36mClub Load (0.4ms)[0m  [1m[34mSELECT "clubs".* FROM "clubs"[0m
+  Rendered clubs/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 46ms (Views: 37.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/clubs/1" for ::1 at 2017-03-01 17:30:57 -0500
+Processing by ClubsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.1ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clubs/show.html.erb within layouts/application
+  [1m[36mMeeting Load (0.4ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings" WHERE "meetings"."club_id" = ?[0m  [["club_id", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 2]]
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."club_id" = ?[0m  [["club_id", 1]]
+  Rendered clubs/show.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 69ms (Views: 60.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/clubs/1/meetings/new" for ::1 at 2017-03-01 17:31:00 -0500
+Processing by MeetingsController#new as HTML
+  Parameters: {"club_id"=>"1"}
+  [1m[36mUser Load (11.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.1ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering meetings/new.html.erb within layouts/application
+  Rendered meetings/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 87ms (Views: 64.0ms | ActiveRecord: 11.4ms)
+
+
+Started POST "/clubs/1/meetings" for ::1 at 2017-03-01 17:31:02 -0500
+Processing by MeetingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A2Sk0qBoWiu9sfxigIj4LwDelIeMCVmYqBuqfwrtkTF/0Rtp1epwjO6fcVALJSW3XMupV+YlLFq0JnIZd40yLw==", "meeting"=>{"date"=>"ada", "host"=>"", "location"=>""}, "commit"=>"Create Meeting", "club_id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.2ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 11ms (ActiveRecord: 1.3ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Member must exist):
+  
+app/controllers/meetings_controller.rb:14:in `create'
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.2ms)
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (85.8ms)
+Started GET "/clubs/1/" for ::1 at 2017-03-01 17:31:28 -0500
+Started GET "/clubs/1/" for ::1 at 2017-03-01 17:31:28 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ClubsController#show as HTML
+Processing by ClubsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.6ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.3ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clubs/show.html.erb within layouts/application
+  Rendering clubs/show.html.erb within layouts/application
+  [1m[36mMeeting Load (1.1ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings" WHERE "meetings"."club_id" = ?[0m  [["club_id", 1]]
+  [1m[36mMeeting Load (0.5ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings" WHERE "meetings"."club_id" = ?[0m  [["club_id", 1]]
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 2]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 2]]
+  [1m[36mMember Load (0.8ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."club_id" = ?[0m  [["club_id", 1]]
+  Rendered clubs/show.html.erb within layouts/application (130.3ms)
+  [1m[36mMember Load (0.4ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."club_id" = ?[0m  [["club_id", 1]]
+  Rendered clubs/show.html.erb within layouts/application (147.0ms)
+Completed 200 OK in 780ms (Views: 700.7ms | ActiveRecord: 1.7ms)
+
+
+Completed 200 OK in 790ms (Views: 702.8ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/clubs/1/meetings/new" for ::1 at 2017-03-01 17:31:31 -0500
+Processing by MeetingsController#new as HTML
+  Parameters: {"club_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.1ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering meetings/new.html.erb within layouts/application
+  Rendered meetings/new.html.erb within layouts/application (30.4ms)
+Completed 200 OK in 75ms (Views: 63.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/clubs/1/meetings" for ::1 at 2017-03-01 17:31:33 -0500
+Processing by MeetingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uK4cbt1LJND5mK6s5HdkehAW/TOw0v6sf8DILm1Zo8XEG6PVqMkOd6q2I55v2rniTAPA49r+i25j/RBIEDkA2w==", "meeting"=>{"date"=>"adad", "host"=>"", "location"=>""}, "commit"=>"Create Meeting", "club_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.1ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 10ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Member must exist):
+  
+app/controllers/meetings_controller.rb:14:in `create'
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.1ms)
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (105.6ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateClubs (20170224194311)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "clubs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "start_date" varchar, "end_date" varchar, "user_id" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_clubs_on_user_id" ON "clubs" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170224194311"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateBooks (20170224201127)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "author" varchar, "photo_url" varchar, "description" varchar, "link" varchar, "genre" varchar, "rating" varchar, "club_id" integer, "meeting_id" integer, "user_id" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_books_on_club_id" ON "books" ("club_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_books_on_club_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_books_on_club_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_books_on_meeting_id" ON "books" ("meeting_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_books_on_meeting_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_books_on_meeting_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_books_on_club_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_books_on_club_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_books_on_user_id" ON "books" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170224201127"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateMeetings (20170224201146)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "meetings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" varchar, "location" varchar, "host" varchar, "book_id" integer, "club_id" integer, "user_id" integer)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_meetings_on_book_id" ON "meetings" ("book_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_meetings_on_book_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_meetings_on_book_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_meetings_on_club_id" ON "meetings" ("club_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_meetings_on_club_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_meetings_on_club_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_meetings_on_book_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_meetings_on_book_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_meetings_on_user_id" ON "meetings" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170224201146"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateMembers (20170224201159)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "members" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "street_address" varchar, "street_address_2" varchar, "city" varchar, "state" varchar, "zip" varchar, "photo_url" varchar, "club_id" integer, "user_id" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_members_on_club_id" ON "members" ("club_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_members_on_club_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_members_on_club_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_members_on_user_id" ON "members" ("user_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170224201159"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to DeviseCreateUsers (20170227204254)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170227204254"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateReviews (20170228142157)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "rating" integer, "comment" varchar, "user_id" integer, "book_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_reviews_on_user_id" ON "reviews" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_reviews_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_reviews_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE  INDEX "index_reviews_on_book_id" ON "reviews" ("book_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170228142157"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-01 22:32:02 UTC], ["updated_at", 2017-03-01 22:32:02 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_books_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_books_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_books_on_meeting_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_books_on_meeting_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_books_on_club_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_books_on_club_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_clubs_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_clubs_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_meetings_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_meetings_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_meetings_on_club_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_meetings_on_club_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_meetings_on_book_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_meetings_on_book_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_members_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_members_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_members_on_club_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_members_on_club_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_reviews_on_book_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_reviews_on_book_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_reviews_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_reviews_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mClub Load (0.2ms)[0m  [1m[34mSELECT "clubs".* FROM "clubs"[0m
+  [1m[36mMeeting Load (0.2ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings"[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "test@email.com"], ["encrypted_password", "$2a$11$wRBzlLObyqf3wtBGTzgEneD51JP5l5Qy16mT7hWdtHQetRaBjzsD2"], ["created_at", 2017-03-01 22:32:02 UTC], ["updated_at", 2017-03-01 22:32:02 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "clubs" ("name", "start_date") VALUES (?, ?)[0m  [["name", "DC Book Club"], ["start_date", "1/1/16"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "meetings" ("date", "location", "host", "book_id", "club_id") VALUES (?, ?, ?, ?, ?)[0m  [["date", "1/2/17"], ["location", "Navy Yard"], ["host", "Laura Goldstein"], ["book_id", 1], ["club_id", 1]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "meetings" ("date", "location", "host", "book_id", "club_id") VALUES (?, ?, ?, ?, ?)[0m  [["date", "3/26/17"], ["location", "Adams Morgan"], ["host", "Susan Poklemba"], ["book_id", 2], ["club_id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "photo_url", "description", "link", "genre", "club_id", "meeting_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Super Sad True Love Story"], ["author", "Gary Shteyngart"], ["photo_url", "https://upload.wikimedia.org/wikipedia/en/5/57/Super_Sad_True_Love_Story_book_cover.jpg"], ["description", "The author of two critically acclaimed novels, The Russian Debutante’s Handbook and Absurdistan, Gary Shteyngart has risen to the top of the fiction world. Now, in his hilarious and heartfelt new novel, he envisions a deliciously dark tale of America’s dysfunctional coming years—and the timeless and tender feelings that just might bring us back from the brink."], ["link", "http://www.goodreads.com/book/show/7334201-super-sad-true-love-story"], ["genre", "fiction"], ["club_id", 1], ["meeting_id", 1]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "photo_url", "description", "link", "genre", "club_id", "meeting_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Tokyo Vice"], ["author", "Jake Adelstein"], ["photo_url", "https://images.gr-assets.com/books/1320453731l/6658129.jpg"], ["description", "From the only American journalist ever to have been admitted to the insular Tokyo Metropolitan Police press club: a unique, firsthand, revelatory look at Japanese culture from the underbelly up."], ["link", "https://www.goodreads.com/book/show/6658129-tokyo-vice"], ["genre", "non-fiction"], ["club_id", 1], ["meeting_id", 2]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "members" ("name", "email", "street_address", "city", "state", "zip", "photo_url", "club_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Laura Goldstein"], ["email", "laurag@email.com"], ["street_address", "11 South Capitol St, SW"], ["city", "Washington"], ["state", "DC"], ["zip", "20003"], ["photo_url", "https://scontent-iad3-1.xx.fbcdn.net/v/t1.0-9/13445550_10104672628192498_1008526753107764760_n.jpg?oh=9b467918c4cbcb997e628c7ee94a526e&oe=5938CBD0"], ["club_id", 1]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "members" ("name", "email", "street_address", "city", "state", "zip", "photo_url", "club_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Susan Poklemba"], ["email", "susan@email.com"], ["street_address", "5 Columbia Road"], ["city", "Washington"], ["state", "DC"], ["zip", "20005"], ["photo_url", "https://scontent-sjc2-1.xx.fbcdn.net/v/t1.0-1/p160x160/15590046_10105555390429898_6512084356769845760_n.jpg?oh=d8a3264085cc5950e4e1d8fc13096400&oe=59339F25"], ["club_id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "comment", "user_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 5], ["comment", "great book!"], ["user_id", 1], ["book_id", 1], ["created_at", 2017-03-01 22:32:02 UTC], ["updated_at", 2017-03-01 22:32:02 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/clubs/1" for ::1 at 2017-03-01 17:32:20 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ClubsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/clubs/1" for ::1 at 2017-03-01 17:32:20 -0500
+Completed 401 Unauthorized in 41ms (ActiveRecord: 0.9ms)
+
+
+Processing by ClubsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-03-01 17:32:20 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (2.4ms)
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (31.6ms)
+Completed 200 OK in 409ms (Views: 406.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2017-03-01 17:32:28 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LXDQaCHogVaKmfuFEyPM/HcJhY1WnzdaI0hU63SmCmRk8dJ/wMY/wQIpYOTiUGujraZCaP+NKh7o0isTU0tg0Q==", "user"=>{"email"=>"test@email.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2017-03-01 22:32:29 UTC], ["last_sign_in_at", 2017-03-01 22:32:29 UTC], ["current_sign_in_ip", "::1"], ["last_sign_in_ip", "::1"], ["sign_in_count", 1], ["updated_at", 2017-03-01 22:32:29 UTC], ["id", 1]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/clubs/1
+Completed 302 Found in 236ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/clubs/1" for ::1 at 2017-03-01 17:32:29 -0500
+Processing by ClubsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.2ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clubs/show.html.erb within layouts/application
+  [1m[36mMeeting Load (0.2ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings" WHERE "meetings"."club_id" = ?[0m  [["club_id", 1]]
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 2]]
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."club_id" = ?[0m  [["club_id", 1]]
+  Rendered clubs/show.html.erb within layouts/application (114.6ms)
+Completed 200 OK in 188ms (Views: 160.1ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/clubs/1/meetings/2" for ::1 at 2017-03-01 17:32:30 -0500
+Processing by MeetingsController#show as HTML
+  Parameters: {"club_id"=>"1", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeeting Load (0.3ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mClub Load (0.3ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering meetings/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 2]]
+  Rendered meetings/show.html.erb within layouts/application (31.1ms)
+Completed 200 OK in 102ms (Views: 87.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/clubs/1" for ::1 at 2017-03-01 17:32:34 -0500
+Processing by ClubsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.2ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clubs/show.html.erb within layouts/application
+  [1m[36mMeeting Load (0.1ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings" WHERE "meetings"."club_id" = ?[0m  [["club_id", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 2]]
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."club_id" = ?[0m  [["club_id", 1]]
+  Rendered clubs/show.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 78ms (Views: 68.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/clubs/1/meetings/new" for ::1 at 2017-03-01 17:32:36 -0500
+Processing by MeetingsController#new as HTML
+  Parameters: {"club_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.1ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering meetings/new.html.erb within layouts/application
+  Rendered meetings/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 55ms (Views: 45.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/clubs/1/meetings" for ::1 at 2017-03-01 17:32:38 -0500
+Processing by MeetingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Hbx6SJwLnX4XKgYXAxdaqKQrkH5m4fePqggL9C28PMd5W+3d6eNBLyv9sydqEPN4vcWxTeOhqN70lVXA5FgwYw==", "meeting"=>{"date"=>"asdsad", "host"=>"", "location"=>""}, "commit"=>"Create Meeting", "club_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.1ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 9ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Member must exist):
+  
+app/controllers/meetings_controller.rb:14:in `create'
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.2ms)
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (106.0ms)
+Started GET "/clubs/1/meetings" for ::1 at 2017-03-01 17:33:45 -0500
+Processing by MeetingsController#index as HTML
+  Parameters: {"club_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering meetings/index.html.erb within layouts/application
+  Rendered meetings/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 58ms (Views: 31.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2017-03-01 17:33:47 -0500
+Processing by ClubsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clubs/index.html.erb within layouts/application
+  [1m[36mClub Load (0.2ms)[0m  [1m[34mSELECT "clubs".* FROM "clubs"[0m
+  Rendered clubs/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 51ms (Views: 35.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/clubs/1" for ::1 at 2017-03-01 17:33:49 -0500
+Processing by ClubsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.3ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clubs/show.html.erb within layouts/application
+  [1m[36mMeeting Load (0.2ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings" WHERE "meetings"."club_id" = ?[0m  [["club_id", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 2]]
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."club_id" = ?[0m  [["club_id", 1]]
+  Rendered clubs/show.html.erb within layouts/application (68.7ms)
+Completed 200 OK in 110ms (Views: 97.2ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/clubs/1/meetings/new" for ::1 at 2017-03-01 17:33:51 -0500
+Processing by MeetingsController#new as HTML
+  Parameters: {"club_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.2ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering meetings/new.html.erb within layouts/application
+  Rendered meetings/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 54ms (Views: 41.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/clubs/1/meetings" for ::1 at 2017-03-01 17:33:53 -0500
+Processing by MeetingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xHpQNo1ttgg5zfk1GWwS2zT2jUDCGJzwuOLfvxamiTGgncej+IVqWQUaTAVwa7sLLRisc0dYw6Hmf4GL30KFlQ==", "meeting"=>{"date"=>"ada", "host"=>"", "location"=>""}, "commit"=>"Create Meeting", "club_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.1ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "meetings" ("date", "location", "host", "club_id", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["date", "ada"], ["location", ""], ["host", ""], ["club_id", 1], ["user_id", 1]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/clubs/1
+Completed 302 Found in 13ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/clubs/1" for ::1 at 2017-03-01 17:33:53 -0500
+Processing by ClubsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.1ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clubs/show.html.erb within layouts/application
+  [1m[36mMeeting Load (0.2ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings" WHERE "meetings"."club_id" = ?[0m  [["club_id", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 2]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 3]]
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."club_id" = ?[0m  [["club_id", 1]]
+  Rendered clubs/show.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 50ms (Views: 42.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/clubs/1/meetings/3" for ::1 at 2017-03-01 17:33:59 -0500
+Processing by MeetingsController#show as HTML
+  Parameters: {"club_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeeting Load (0.2ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mClub Load (0.1ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 6ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Book with 'id'=):
+  
+app/controllers/meetings_controller.rb:21:in `show'
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.2ms)
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (85.3ms)
+Started GET "/clubs/1/meetings/3" for ::1 at 2017-03-01 17:34:25 -0500
+Processing by MeetingsController#show as HTML
+  Parameters: {"club_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeeting Load (0.3ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mClub Load (0.2ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering meetings/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered meetings/show.html.erb within layouts/application (9.0ms)
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 2.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+     9:   <% end %>
+    10: <p> Host: <%= @meeting.host%></p>
+    11: <p> Location: <%= @meeting.location%></p>
+    12:     <p>Book Title: <%= @book.title %>
+    13:     <% if current_user == @book.user %>
+    14:         <%= link_to "(edit)", edit_meeting_book_path(@meeting, book) %></p>
+    15:     <% else %>
+  
+app/views/meetings/show.html.erb:12:in `_app_views_meetings_show_html_erb__4476939059914950855_70121246222820'
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.1ms)
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (100.6ms)
+Started GET "/clubs/1/meetings/3" for ::1 at 2017-03-01 17:36:31 -0500
+Processing by MeetingsController#show as HTML
+  Parameters: {"club_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeeting Load (0.2ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mClub Load (0.2ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering meetings/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered meetings/show.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 58ms (Views: 50.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/clubs/1" for ::1 at 2017-03-01 17:36:34 -0500
+Processing by ClubsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.2ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clubs/show.html.erb within layouts/application
+  [1m[36mMeeting Load (0.2ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings" WHERE "meetings"."club_id" = ?[0m  [["club_id", 1]]
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 2]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 3]]
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."club_id" = ?[0m  [["club_id", 1]]
+  Rendered clubs/show.html.erb within layouts/application (44.6ms)
+Completed 200 OK in 78ms (Views: 70.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/clubs/1/meetings/1" for ::1 at 2017-03-01 17:36:36 -0500
+Processing by MeetingsController#show as HTML
+  Parameters: {"club_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeeting Load (0.1ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.1ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering meetings/show.html.erb within layouts/application
+  Rendered meetings/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 60ms (Views: 54.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/clubs/1" for ::1 at 2017-03-01 17:40:20 -0500
+  
+LoadError (cannot load such file -- /Users/lauragoldstein/wdi/projects/book_club/Project_2/book_club/config/routes.rb):
+  
+activesupport (5.0.1) lib/active_support/dependencies.rb:287:in `load'
+activesupport (5.0.1) lib/active_support/dependencies.rb:287:in `block in load'
+activesupport (5.0.1) lib/active_support/dependencies.rb:259:in `load_dependency'
+activesupport (5.0.1) lib/active_support/dependencies.rb:287:in `load'
+railties (5.0.1) lib/rails/application/routes_reloader.rb:40:in `block in load_paths'
+railties (5.0.1) lib/rails/application/routes_reloader.rb:40:in `each'
+railties (5.0.1) lib/rails/application/routes_reloader.rb:40:in `load_paths'
+railties (5.0.1) lib/rails/application/routes_reloader.rb:16:in `reload!'
+railties (5.0.1) lib/rails/application/routes_reloader.rb:26:in `block in updater'
+activesupport (5.0.1) lib/active_support/file_update_checker.rb:77:in `execute'
+railties (5.0.1) lib/rails/application/routes_reloader.rb:7:in `execute'
+railties (5.0.1) lib/rails/application/finisher.rb:132:in `block (2 levels) in <module:Finisher>'
+activesupport (5.0.1) lib/active_support/callbacks.rb:396:in `instance_exec'
+activesupport (5.0.1) lib/active_support/callbacks.rb:396:in `block in make_lambda'
+activesupport (5.0.1) lib/active_support/callbacks.rb:169:in `block (2 levels) in halting'
+activesupport (5.0.1) lib/active_support/callbacks.rb:547:in `block (2 levels) in default_terminator'
+activesupport (5.0.1) lib/active_support/callbacks.rb:546:in `catch'
+activesupport (5.0.1) lib/active_support/callbacks.rb:546:in `block in default_terminator'
+activesupport (5.0.1) lib/active_support/callbacks.rb:170:in `block in halting'
+activesupport (5.0.1) lib/active_support/callbacks.rb:454:in `block in call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:454:in `each'
+activesupport (5.0.1) lib/active_support/callbacks.rb:454:in `call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_run_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+activesupport (5.0.1) lib/active_support/execution_wrapper.rb:108:in `run!'
+activesupport (5.0.1) lib/active_support/reloader.rb:113:in `run!'
+activesupport (5.0.1) lib/active_support/execution_wrapper.rb:70:in `block in run!'
+activesupport (5.0.1) lib/active_support/execution_wrapper.rb:67:in `tap'
+activesupport (5.0.1) lib/active_support/execution_wrapper.rb:67:in `run!'
+activesupport (5.0.1) lib/active_support/reloader.rb:59:in `run!'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:10:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.1ms)
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.8ms)
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (89.8ms)
+Started GET "/clubs/1" for ::1 at 2017-03-01 17:41:07 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ClubsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.5ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clubs/show.html.erb within layouts/application
+  [1m[36mMeeting Load (0.7ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings" WHERE "meetings"."club_id" = ?[0m  [["club_id", 1]]
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 2]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 3]]
+  [1m[36mMember Load (0.6ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."club_id" = ?[0m  [["club_id", 1]]
+  Rendered clubs/show.html.erb within layouts/application (90.3ms)
+Completed 200 OK in 421ms (Views: 362.5ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/clubs/1/meetings/new" for ::1 at 2017-03-01 17:41:21 -0500
+Processing by MeetingsController#new as HTML
+  Parameters: {"club_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.2ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering meetings/new.html.erb within layouts/application
+  Rendered meetings/new.html.erb within layouts/application (26.5ms)
+Completed 200 OK in 91ms (Views: 75.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/clubs/1/meetings" for ::1 at 2017-03-01 17:41:23 -0500
+Processing by MeetingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"27yDfGig3m/N5GtctJ3P/hYNHxWyC4V8pOmcXW47Bja/WxTpHUgCPvEz3mzdmmYuD+M+JjdL2i36dMJpp98Kkg==", "meeting"=>{"date"=>"asdad", "host"=>"", "location"=>""}, "commit"=>"Create Meeting", "club_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.1ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "meetings" ("date", "location", "host", "club_id", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["date", "asdad"], ["location", ""], ["host", ""], ["club_id", 1], ["user_id", 1]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/clubs/1
+Completed 302 Found in 12ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/clubs/1" for ::1 at 2017-03-01 17:41:23 -0500
+Processing by ClubsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.1ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clubs/show.html.erb within layouts/application
+  [1m[36mMeeting Load (0.3ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings" WHERE "meetings"."club_id" = ?[0m  [["club_id", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 2]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 3]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 4]]
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."club_id" = ?[0m  [["club_id", 1]]
+  Rendered clubs/show.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 64ms (Views: 57.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/clubs/1/meetings/2" for ::1 at 2017-03-01 17:41:26 -0500
+Processing by MeetingsController#show as HTML
+  Parameters: {"club_id"=>"1", "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeeting Load (0.2ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mClub Load (0.1ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering meetings/show.html.erb within layouts/application
+  Rendered meetings/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 46ms (Views: 37.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/clubs/1" for ::1 at 2017-03-01 17:41:29 -0500
+Processing by ClubsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.1ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clubs/show.html.erb within layouts/application
+  [1m[36mMeeting Load (0.3ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings" WHERE "meetings"."club_id" = ?[0m  [["club_id", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 1]]
+  [1m[36mBook Load (1.8ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 2]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 3]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 4]]
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."club_id" = ?[0m  [["club_id", 1]]
+  Rendered clubs/show.html.erb within layouts/application (25.5ms)
+Completed 200 OK in 73ms (Views: 63.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/clubs/1/meetings/4" for ::1 at 2017-03-01 17:41:32 -0500
+Processing by MeetingsController#show as HTML
+  Parameters: {"club_id"=>"1", "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeeting Load (0.1ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mClub Load (0.1ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering meetings/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered meetings/show.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 47ms (Views: 40.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/meetings/4/books/new" for ::1 at 2017-03-01 17:41:33 -0500
+Processing by BooksController#new as HTML
+  Parameters: {"meeting_id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeeting Load (0.2ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 45ms (Views: 35.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/meetings/4/books" for ::1 at 2017-03-01 17:41:35 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TY92q4l/ftHQsDM2AFQgIGdX6ntLzdcHRAODajUv2TPuCmktFOCD8buTNA9NeQanQP5ls6CYgQHKoioMPKU0ng==", "book"=>{"title"=>"", "author"=>"", "photo_url"=>"adad", "link"=>"", "description"=>"", "genre"=>""}, "commit"=>"Create Book", "meeting_id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeeting Load (0.2ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mClub Load (0.2ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/meetings/4
+Completed 302 Found in 15ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/meetings/4" for ::1 at 2017-03-01 17:41:35 -0500
+Processing by MeetingsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeeting Load (0.1ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mClub Load (0.1ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering meetings/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered meetings/show.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 41ms (Views: 35.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/clubs/1" for ::1 at 2017-03-01 17:41:39 -0500
+Processing by ClubsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.4ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clubs/show.html.erb within layouts/application
+  [1m[36mMeeting Load (0.2ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings" WHERE "meetings"."club_id" = ?[0m  [["club_id", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 2]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 3]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 4]]
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."club_id" = ?[0m  [["club_id", 1]]
+  Rendered clubs/show.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 70ms (Views: 61.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/clubs/1/meetings/4" for ::1 at 2017-03-01 17:48:57 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MeetingsController#show as HTML
+  Parameters: {"club_id"=>"1", "id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeeting Load (0.5ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mClub Load (0.5ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering meetings/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered meetings/show.html.erb within layouts/application (35.2ms)
+Completed 200 OK in 417ms (Views: 346.2ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/clubs/1" for ::1 at 2017-03-01 17:49:00 -0500
+Processing by ClubsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.2ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clubs/show.html.erb within layouts/application
+  [1m[36mMeeting Load (0.5ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings" WHERE "meetings"."club_id" = ?[0m  [["club_id", 1]]
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 2]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 3]]
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 4]]
+  [1m[36mMember Load (0.7ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."club_id" = ?[0m  [["club_id", 1]]
+  Rendered clubs/show.html.erb within layouts/application (65.6ms)
+Completed 200 OK in 108ms (Views: 94.9ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/clubs/1/meetings/4" for ::1 at 2017-03-01 17:49:04 -0500
+Processing by MeetingsController#show as HTML
+  Parameters: {"club_id"=>"1", "id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeeting Load (0.2ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mClub Load (0.1ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering meetings/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered meetings/show.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 65ms (Views: 48.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/clubs/1/meetings/4/edit" for ::1 at 2017-03-01 17:49:05 -0500
+Processing by MeetingsController#edit as HTML
+  Parameters: {"club_id"=>"1", "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeeting Load (0.1ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mClub Load (0.1ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering meetings/edit.html.erb within layouts/application
+  Rendered meetings/edit.html.erb within layouts/application (34.1ms)
+Completed 200 OK in 68ms (Views: 61.3ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/clubs/1/meetings/4" for ::1 at 2017-03-01 17:49:06 -0500
+Processing by MeetingsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SxSOvHxkdBkWrXMhB5WITUr827q7R7PRz5wNIFp+/KZD9eV6bUNdh/GgP7GV24816H+8XB2Cy0dVOuDiNdxl3A==", "commit"=>"Delete", "club_id"=>"1", "id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeeting Load (0.1ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mClub Load (0.1ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "meetings" WHERE "meetings"."id" = ?[0m  [["id", 4]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/clubs/1
+Completed 302 Found in 11ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/clubs/1" for ::1 at 2017-03-01 17:49:06 -0500
+Processing by ClubsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.2ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clubs/show.html.erb within layouts/application
+  [1m[36mMeeting Load (0.2ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings" WHERE "meetings"."club_id" = ?[0m  [["club_id", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 1]]
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 2]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 3]]
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."club_id" = ?[0m  [["club_id", 1]]
+  Rendered clubs/show.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 62ms (Views: 47.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/clubs/1/meetings/3" for ::1 at 2017-03-01 17:49:10 -0500
+Processing by MeetingsController#show as HTML
+  Parameters: {"club_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeeting Load (0.1ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mClub Load (0.1ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering meetings/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered meetings/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 45ms (Views: 38.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/clubs/1/meetings/3/edit" for ::1 at 2017-03-01 17:49:12 -0500
+Processing by MeetingsController#edit as HTML
+  Parameters: {"club_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeeting Load (0.2ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mClub Load (0.3ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering meetings/edit.html.erb within layouts/application
+  Rendered meetings/edit.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 55ms (Views: 47.0ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/clubs/1/meetings/3" for ::1 at 2017-03-01 17:49:13 -0500
+Processing by MeetingsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DMsmX6I1cEj6UF6JUPtF5w81DMWewZnQxNE7so2cEwybJvba/wQlEwW1jM7A0RXoM/ue4xhQRb3Co21DLLlrew==", "commit"=>"Delete", "club_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeeting Load (0.2ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mClub Load (0.1ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "meetings" WHERE "meetings"."id" = ?[0m  [["id", 3]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/clubs/1
+Completed 302 Found in 13ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/clubs/1" for ::1 at 2017-03-01 17:49:13 -0500
+Processing by ClubsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.2ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clubs/show.html.erb within layouts/application
+  [1m[36mMeeting Load (0.3ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings" WHERE "meetings"."club_id" = ?[0m  [["club_id", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 2]]
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."club_id" = ?[0m  [["club_id", 1]]
+  Rendered clubs/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 59ms (Views: 50.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/clubs/1" for ::1 at 2017-03-01 17:52:53 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ClubsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.4ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clubs/show.html.erb within layouts/application
+  [1m[36mMeeting Load (0.7ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings" WHERE "meetings"."club_id" = ?[0m  [["club_id", 1]]
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 2]]
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."club_id" = ?[0m  [["club_id", 1]]
+  Rendered clubs/show.html.erb within layouts/application (88.2ms)
+Completed 200 OK in 472ms (Views: 413.8ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/clubs/1/meetings/1" for ::1 at 2017-03-01 17:53:01 -0500
+Processing by MeetingsController#show as HTML
+  Parameters: {"club_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeeting Load (0.2ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.2ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.0ms)
+
+
+  
+NoMethodError (undefined method `reviews' for nil:NilClass):
+  
+app/controllers/meetings_controller.rb:22:in `show'
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.6ms)
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (154.5ms)
+Started GET "/clubs/1/meetings/1" for ::1 at 2017-03-01 17:53:15 -0500
+Processing by MeetingsController#show as HTML
+  Parameters: {"club_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeeting Load (1.0ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.5ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 5.6ms)
+
+
+  
+NoMethodError (undefined method `book' for #<Meeting:0x007fe9a7f8cf58>
+Did you mean?  books):
+  
+app/controllers/meetings_controller.rb:21:in `show'
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.2ms)
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (91.0ms)
+Started GET "/clubs/1/meetings/1" for ::1 at 2017-03-01 17:53:45 -0500
+Processing by MeetingsController#show as HTML
+  Parameters: {"club_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeeting Load (0.4ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.5ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."meeting_id" = ? ORDER BY "books"."id" ASC LIMIT ?[0m  [["meeting_id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 1]]
+Completed 500 Internal Server Error in 85ms (ActiveRecord: 6.9ms)
+
+
+  
+NoMethodError (undefined method `/' for nil:NilClass):
+  
+app/controllers/meetings_controller.rb:24:in `show'
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (15.8ms)
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (96.2ms)
+Started GET "/clubs/1/meetings/1" for ::1 at 2017-03-01 17:54:26 -0500
+Processing by MeetingsController#show as HTML
+  Parameters: {"club_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeeting Load (0.3ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.1ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."meeting_id" = ? ORDER BY "books"."id" ASC LIMIT ?[0m  [["meeting_id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 1]]
+  Rendering meetings/show.html.erb within layouts/application
+  Rendered meetings/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 121ms (Views: 30.3ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/clubs/1/meetings/1" for ::1 at 2017-03-01 17:55:58 -0500
+Processing by MeetingsController#show as HTML
+  Parameters: {"club_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeeting Load (0.2ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.1ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."meeting_id" = ? ORDER BY "books"."id" ASC LIMIT ?[0m  [["meeting_id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 1]]
+  Rendering meetings/show.html.erb within layouts/application
+  Rendered meetings/show.html.erb within layouts/application (299.5ms)
+Completed 500 Internal Server Error in 349ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `book' for #<#<Class:0x007fe9a89f65e8>:0x007fe9a89eac20>
+Did you mean?  @book):
+    21:     <div class = "book_photo">
+    22:       <img src = "<%= @book.photo_url %>">
+    23:     </div>
+    24:     <p><%= book.description %></p>
+    25:     <a href = "<%= @book.link %>" > Read More </a>
+    26:     <h1> Book Reviews </h1>
+    27:     <div class = "add">
+  
+app/views/meetings/show.html.erb:24:in `_app_views_meetings_show_html_erb___2792449151900070267_70320766540900'
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.8ms)
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (103.0ms)
+Started GET "/clubs/1/meetings/1" for ::1 at 2017-03-01 17:56:10 -0500
+Processing by MeetingsController#show as HTML
+  Parameters: {"club_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeeting Load (0.1ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.1ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."meeting_id" = ? ORDER BY "books"."id" ASC LIMIT ?[0m  [["meeting_id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 1]]
+  Rendering meetings/show.html.erb within layouts/application
+  Rendered meetings/show.html.erb within layouts/application (231.9ms)
+Completed 500 Internal Server Error in 250ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `book' for #<#<Class:0x007fe9a89f65e8>:0x007fe9a8b1d408>
+Did you mean?  @book):
+    25:     <a href = "<%= @book.link %>" > Read More </a>
+    26:     <h1> Book Reviews </h1>
+    27:     <div class = "add">
+    28:       <%= link_to "Add Review", new_book_review_path(book) %>
+    29:     </div>
+    30:     <% @book.reviews.each do |review| %>
+    31:     <div class = "review">
+  
+app/views/meetings/show.html.erb:28:in `_app_views_meetings_show_html_erb___2792449151900070267_70320767168780'
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.6ms)
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (85.0ms)
+Started GET "/clubs/1/meetings/1" for ::1 at 2017-03-01 17:56:19 -0500
+Processing by MeetingsController#show as HTML
+  Parameters: {"club_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeeting Load (0.1ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.1ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."meeting_id" = ? ORDER BY "books"."id" ASC LIMIT ?[0m  [["meeting_id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 1]]
+  Rendering meetings/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered meetings/show.html.erb within layouts/application (162.8ms)
+Completed 500 Internal Server Error in 179ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `book' for #<#<Class:0x007fe9a89f65e8>:0x007fe9a892a0b0>
+Did you mean?  @book):
+    30:     <% @book.reviews.each do |review| %>
+    31:     <div class = "review">
+    32:       <p id = "b"> Created: <%= review.created_at %><% if current_user == review.user %>
+    33:         <%= link_to "(Edit)", edit_book_review_path(book, review) %> </p>
+    34:       <% else %>
+    35:         </p>
+    36:     <% end %>
+  
+app/views/meetings/show.html.erb:33:in `block in _app_views_meetings_show_html_erb___2792449151900070267_70320766146160'
+app/views/meetings/show.html.erb:30:in `_app_views_meetings_show_html_erb___2792449151900070267_70320766146160'
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.5ms)
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/lauragoldstein/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (85.3ms)
+Started GET "/clubs/1/meetings/1" for ::1 at 2017-03-01 17:56:30 -0500
+Processing by MeetingsController#show as HTML
+  Parameters: {"club_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeeting Load (0.1ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.1ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."meeting_id" = ? ORDER BY "books"."id" ASC LIMIT ?[0m  [["meeting_id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 1]]
+  Rendering meetings/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered meetings/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 44ms (Views: 33.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/books/1/reviews/new" for ::1 at 2017-03-01 17:56:34 -0500
+Processing by ReviewsController#new as HTML
+  Parameters: {"book_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 73ms (Views: 62.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/books/1/reviews" for ::1 at 2017-03-01 17:56:39 -0500
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gdX6jawcBC1oGo9vNi38bt/JOKGCC+izEhgklppzvLXV5ClKf3GgV7o0CyNs2pOQfSD21LygpZ3tLDKSWOfDow==", "review"=>{"rating"=>"10", "comment"=>"adada"}, "commit"=>"Create Review", "book_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.1ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeeting Load (0.1ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "comment", "user_id", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 10], ["comment", "adada"], ["user_id", 1], ["book_id", 1], ["created_at", 2017-03-01 22:56:39 UTC], ["updated_at", 2017-03-01 22:56:39 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/clubs/1/meetings/1
+Completed 302 Found in 13ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/clubs/1/meetings/1" for ::1 at 2017-03-01 17:56:39 -0500
+Processing by MeetingsController#show as HTML
+  Parameters: {"club_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeeting Load (0.1ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.1ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."meeting_id" = ? ORDER BY "books"."id" ASC LIMIT ?[0m  [["meeting_id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 1]]
+  Rendering meetings/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered meetings/show.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 43ms (Views: 32.6ms | ActiveRecord: 1.0ms)
+
+

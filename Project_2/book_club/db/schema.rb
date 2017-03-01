@@ -40,13 +40,11 @@ ActiveRecord::Schema.define(version: 20170228142157) do
     t.string  "date"
     t.string  "location"
     t.string  "host"
-    t.integer "member_id"
     t.integer "book_id"
     t.integer "club_id"
     t.integer "user_id"
     t.index ["book_id"], name: "index_meetings_on_book_id"
     t.index ["club_id"], name: "index_meetings_on_club_id"
-    t.index ["member_id"], name: "index_meetings_on_member_id"
     t.index ["user_id"], name: "index_meetings_on_user_id"
   end
 
@@ -68,10 +66,10 @@ ActiveRecord::Schema.define(version: 20170228142157) do
   create_table "reviews", force: :cascade do |t|
     t.integer  "rating"
     t.string   "comment"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.integer  "user_id"
     t.integer  "book_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["book_id"], name: "index_reviews_on_book_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end

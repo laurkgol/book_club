@@ -2,15 +2,14 @@
   <h1> <%= link_to @club.name, club_path(@club) %></h1>
 </div>
 <h2><%= @member.name %></h2>
-
   <% if current_user == @member.user %>
-    <%= link_to "(edit)", edit_club_member_path(@club) %></h3>
+    <%= link_to "(edit)", edit_club_member_path(@club) %></h2>
   <% else %>
-    </h3>
+    </h2>
   <% end %>
 <ul>
+  <img class = "member_photo" src = "<%= @member.photo_url %> ">
   <li><a href = "mailto:<%= @member.email %>"><%= @member.email %></a></li>
   <li> <%= @member.street_address %>, <%= @member.street_address_2 %></li>
   <li> <%= @member.city %>, <%= @member.state %> <%= @member.zip %></li>
-    <img class = "member_photo" src = "<%= @member.photo_url %> ">
 </ul>

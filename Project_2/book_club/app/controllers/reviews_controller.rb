@@ -16,11 +16,11 @@ class ReviewsController < ApplicationController
 
   def create
     @book = Book.find(params[:book_id])
-    @meeting = Meeting.find(@book.meeting_id)
     @club = Club.find(@book.club_id)
+    @meeting = Meeting.find(@book.meeting_id)
    @book.reviews.create(review_params.merge(user: current_user))
 
-    redirect_to meeting_path(@meeting)
+    redirect_to club_meeting_path(@club, @meeting)
 end
 
 def edit
@@ -31,8 +31,8 @@ def edit
 
   # update
   def update
-    @book = Book.find(params[:book_id])
     @review = Review.find(params[:id])
+    @book = Book.find(params[:book_id])
     if @review.user == current_user
       @review.update(review_params)
     else
@@ -43,14 +43,16 @@ def edit
 
   # destroy
   def destroy
+    @book = Book.find(params[:book_id])
     @review = Review.find(params[:id])
+    @meeting = Meeting.find(@book.meeting_id)
     if @review.user == current_user
     @review.destroy
   else
     flash[:alert] = "Only the author of the review can delete"
   end
 
-    redirect_to reviews_path
+  redirect_to book_review_path(@book, @review)
   end
 
 private

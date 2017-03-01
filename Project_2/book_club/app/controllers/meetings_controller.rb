@@ -11,13 +11,17 @@ class MeetingsController < ApplicationController
   def create
 
     @club = Club.find(params[:club_id])
-    @club.meetings.create(meeting_params.merge(user: current_user))
+    @club.meetings.create!(meeting_params.merge(user: current_user))
     redirect_to club_path(@club)
   end
 
   def show
     @meeting = Meeting.find(params[:id])
-    @club = Club.find(@meeting.club_id)
+    @club = @meeting.club
+    @book = @meeting.books.first
+    @reviews = @book.reviews
+    @sum_ratings = @reviews.reduce(0) { |sum, review| sum + review.rating }
+    @average_rating = @sum_ratings / @reviews.length
   end
 
   def edit
