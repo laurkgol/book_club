@@ -11,7 +11,6 @@
   <div class = "rows">
     <div class = "meetings">
       <h2>Meetings </h2>
-      <hr class = "big_line">
       <% @club.meetings.each do |meeting|%>
       <div class = "meeting_flex">
           <div class = "meeting_info">
@@ -32,19 +31,19 @@
             <%= link_to "Add Meeting", new_club_meeting_path(@club) %>
           </div>
         </div>
-
+        <div class = "clearfix"></div>
+        <h2>Members</h2>
         <div class = "members">
-          <h2>Members</h2>
+
           <% @club.members.each do |member|%>
             <div class = "member_table">
               <img class = "member_photo" src = "<%= member.photo_url %> ">
               <%= link_to member.name, club_member_path(@club, member) %>
             </div>
-              <hr>
           <% end %>
-
+          </div>
         <div class = "add">
             <%= link_to "Add Members", new_club_member_path(@club) %>
-        </div>
+
       </div>
   </div>

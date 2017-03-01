@@ -7,41 +7,41 @@
   <% else %>
       </h1>
   <% end %>
-<p> Host: <%= @meeting.host%></p>
-<p> Location: <%= @meeting.location%></p>
-<% @meeting.books.each do |book| %>
-    <p>Book Title: <%= book.title %>
-    <% if current_user == book.user %>
+<p> Host: <%= @member.name%></p>
+<p> Location:<p>
+  <p><%= @member.street_address%></p>
+<p><%= @member.street_address_2%></p>
+<p><%= @member.city%>, <%= @member.state %> <%= @member.zip %></p>
+
+    <p>Book Title: <%= @book.title %>
+    <% if current_user == @book.user %>
         <%= link_to "(edit)", edit_meeting_book_path(@meeting, book) %></p>
     <% else %>
         </p>
     <% end %>
-    <p>Author: <%= book.author %> </p>
-    <p>Genre: <%= book.genre %> </p>
+    <p>Author: <%= @book.author %> </p>
+    <p>Genre: <%= @book.genre %> </p>
     <div class = "book_photo">
-      <img src = "<%= book.photo_url %>">
+      <img src = "<%= @book.photo_url %>">
     </div>
-    <p><%= book.description %></p>
-    <a href = "<%= book.link %>" > Read More </a>
+    <p><%= @book.description %></p>
+    <a href = "<%= @book.link %>" > Read More </a>
     <h1> Book Reviews </h1>
     <div class = "add">
-      <%= link_to "Add Review", new_book_review_path(book) %>
+      <%= link_to "Add Review", new_book_review_path(@book) %>
     </div>
-
-    <% book.reviews.each do |review| %>
+    <% @book.reviews.each do |review| %>
     <div class = "review">
       <p id = "b"> Created: <%= review.created_at %><% if current_user == review.user %>
-        <%= link_to "(Edit)", edit_book_review_path(book, review) %> </p>
+        <%= link_to "(Edit)", edit_book_review_path(@book, review) %> </p>
       <% else %>
         </p>
     <% end %>
-      <p> Rating: <%= review.rating %></p>
-
+      <p> Rating :<%= review.rating %>
       <p> Comment: <%= review.comment %></p>
       </div>
     <% end %>
 
-<% end %>
 
 <div class = "add">
   <%= link_to "Add Book", new_meeting_book_path(@meeting) %>

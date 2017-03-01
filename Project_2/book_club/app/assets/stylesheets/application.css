@@ -16,17 +16,16 @@
 main{
   margin-left: 150pt;
   margin-right: 150pt;
-  display: flex;
-  flex-direction: column;
   border-style: solid;
   border-color: #B23057;
   border-width: 1pt;
   padding: 60pt;
 }
-/*.rows{
-  display: flex;
-  flex-direction: row;
-}*/
+@media only screen and (max-width:768px) {
+  margin-left: 50pt;
+  margin-right: 50pt;
+}
+
 .meeting_flex{
   display: flex;
   justify-content: center;
@@ -35,14 +34,7 @@ main{
 .row{
 
 }
-/*.meetings{
-  display: inline-block;
-  width: 75%;
-}
-.members{
-  display: inline-block;
-  width: 15%
-}*/
+
 #b{
   font-style: italic;
 }
@@ -56,6 +48,15 @@ a {
   text-decoration: none;
   font-weight: bold;
 }
+#title:hover{
+  font-size: 30pt;
+}
+a:hover{
+  font-size: 15pt;
+}
+
+
+
 hr {
   color: #B23057;
 }
@@ -78,6 +79,14 @@ h1{
 .member_table{
   display: flex;
   flex-direction: column;
+  align-items: center;
+
+
+}
+.members{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 h2{
   font-family: 'Lobster', cursive;
@@ -99,8 +108,8 @@ nav, footer{
   background-color: #FFEC00;
   width: 100%;
   text-align: center;
-
 }
+
 
 nav{
   margin-bottom: 20pt;
@@ -114,13 +123,6 @@ footer{
   margin-right: 150pt;
   margin-top:0;
 }
-.create{
-  padding: 10pt;
-  background-color: #B23057;
-  width: 100%;
-  text-align: center;
-}
-
 
 nav{
 
@@ -168,6 +170,7 @@ img{
 }
 .club{
   background-color: #B23057;
+  padding: 10pt;
 }
 ul{
   list-style-type: none;
@@ -187,5 +190,10 @@ input[type: text]{
   margin: 10pt;
 }
 
-#wrapper{
-}
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;

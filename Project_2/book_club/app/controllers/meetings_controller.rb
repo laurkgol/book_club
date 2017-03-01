@@ -18,6 +18,8 @@ class MeetingsController < ApplicationController
   def show
     @meeting = Meeting.find(params[:id])
     @club = Club.find(@meeting.club_id)
+    @book = Book.find(@meeting.book_id)
+    @member = Member.find(@meeting.member_id)
   end
 
   def edit
