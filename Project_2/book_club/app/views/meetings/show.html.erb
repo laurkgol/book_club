@@ -1,6 +1,7 @@
 <div class = "club">
  <h1><%= link_to @club.name, club_path(@club) %> </h1>
 </div>
+
 <h1> Meeting on  <%= @meeting.date %>
   <% if current_user == @meeting.user %>
     <%= link_to "(edit)", edit_club_meeting_path(@club) %></h1>
@@ -9,38 +10,45 @@
   <% end %>
 <p> Host: <%= @meeting.host%></p>
 <p> Location: <%= @meeting.location%></p>
-    <p>Book Title: <%= @book.title %>
-    <% if current_user == @book.user %>
-        <%= link_to "(edit)", edit_meeting_book_path(@meeting, @book) %></p>
+    <% @meeting.books.each do |book| %>
+    <p>Book Title: <%= book.title %>
+    <% if current_user == book.user %>
+        <%= link_to "(edit)", edit_meeting_book_path(@meeting, book) %></p>
     <% else %>
         </p>
     <% end %>
-    <p>Author: <%= @book.author %> </p>
-    <p>Genre: <%= @book.genre %> </p>
+    <p>Author: <%= book.author %> </p>
+    <p>Genre: <%= book.genre %> </p>
+    <% if book.reviews.length > 0 %>
+    <% @reviews = book.reviews %>
     <% if @reviews.length > 0 %>
-    <p>Average Rating: <%= @average_rating %></p>
+      <%  @sum_ratings = @reviews.reduce(0) { |sum, review| sum + review.rating } %>
+      <%  @average_rating = @sum_ratings / @reviews.length %>
+      <p>Average Rating: <%= @average_rating %></p>
+  <% end %>
+
     <% end %>
     <div class = "book_photo">
-      <img src = "<%= @book.photo_url %>">
+      <img src = "<%= book.photo_url %>">
     </div>
-    <p><%= @book.description %></p>
-    <a href = "<%= @book.link %>" > Read More </a>
+    <p><%= book.description %></p>
+    <a href = "<%= book.link %>" > Read More </a>
     <h1> Book Reviews </h1>
     <div class = "add">
-      <%= link_to "Add Review", new_book_review_path(@book) %>
+      <%= link_to "Add Review", new_book_review_path(book) %>
     </div>
-    <% @book.reviews.each do |review| %>
+    <% book.reviews.each do |review| %>
     <div class = "review">
       <p id = "b"> Created: <%= review.created_at %><% if current_user == review.user %>
-        <%= link_to "(Edit)", edit_book_review_path(@book, review) %> </p>
+        <%= link_to "(Edit)", edit_book_review_path(book, review) %> </p>
       <% else %>
         </p>
     <% end %>
-      <p> Rating :<%= review.rating %>
+      <p> Rating : <%= review.rating %>
       <p> Comment: <%= review.comment %></p>
       </div>
-    <% end %>
-
+      <%end%>
+<% end %>
 
 <div class = "add">
   <%= link_to "Add Book", new_meeting_book_path(@meeting) %>

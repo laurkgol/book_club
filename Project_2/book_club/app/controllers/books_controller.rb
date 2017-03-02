@@ -6,12 +6,14 @@ class BooksController < ApplicationController
   def show
     @book = Book.find(params[:id])
     @sum_rating = @book.reviews.reduce do |sum, rating|
-      sum + rating
+        sum + rating
+      end
+      @average_rating = @sum_rating / @book.reviews.length
+      @meeting = Meeting.find(params[:meeting_id])
+      @club = Club.find(@book.club_id)
     end
-    @average_rating = @sum_rating / @book.reviews.length
-    @meeting = Meeting.find(@book.meeting_id)
-    @club = Club.find(@book.club_id)
-  end
+
+
 
   def new
     @meeting = Meeting.find(params[:meeting_id])
@@ -22,7 +24,8 @@ class BooksController < ApplicationController
   def create
     @meeting = Meeting.find(params[:meeting_id])
     @club = Club.find(@meeting.club_id)
-   @meeting.books.create(book_params.merge(user: current_user))
+    @meeting.books.create!(book_params.merge(user: current_user))
+
 
     redirect_to meeting_path(@meeting)
 end
