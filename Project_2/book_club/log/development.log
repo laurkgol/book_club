@@ -10153,3 +10153,20 @@ Processing by ClubsController#show as HTML
 Completed 200 OK in 135ms (Views: 120.1ms | ActiveRecord: 4.7ms)
 
 
+Started GET "/clubs/1" for ::1 at 2017-03-02 09:45:32 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ClubsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.4ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clubs/show.html.erb within layouts/application
+  [1m[36mMeeting Load (0.7ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings" WHERE "meetings"."club_id" = ?[0m  [["club_id", 1]]
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 2]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 9]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = ?[0m  [["meeting_id", 10]]
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."club_id" = ?[0m  [["club_id", 1]]
+  Rendered clubs/show.html.erb within layouts/application (84.0ms)
+Completed 200 OK in 635ms (Views: 574.4ms | ActiveRecord: 6.3ms)
+
+
