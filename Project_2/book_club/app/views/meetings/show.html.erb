@@ -17,7 +17,9 @@
     <% end %>
     <p>Author: <%= @book.author %> </p>
     <p>Genre: <%= @book.genre %> </p>
+    <% if @reviews.length > 0 %>
     <p>Average Rating: <%= @average_rating %></p>
+    <% end %>
     <div class = "book_photo">
       <img src = "<%= @book.photo_url %>">
     </div>

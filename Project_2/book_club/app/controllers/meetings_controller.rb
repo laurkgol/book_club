@@ -20,8 +20,10 @@ class MeetingsController < ApplicationController
     @club = @meeting.club
     @book = @meeting.books.first
     @reviews = @book.reviews
-    @sum_ratings = @reviews.reduce(0) { |sum, review| sum + review.rating }
-    @average_rating = @sum_ratings / @reviews.length
+    if @reviews.length > 0
+      @sum_ratings = @reviews.reduce(0) { |sum, review| sum + review.rating }
+      @average_rating = @sum_ratings / @reviews.length
+    end
   end
 
   def edit
