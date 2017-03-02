@@ -27,18 +27,21 @@ def edit
     @review = Review.find(params[:id])
     @book = Book.find(params[:book_id])
 
+
   end
 
   # update
   def update
     @review = Review.find(params[:id])
+
     @book = Book.find(params[:book_id])
+    @meeting = Meeting.find(@book.meeting_id)
     if @review.user == current_user
       @review.update(review_params)
     else
       flash[:alert] = "Only the author of the review can edit"
     end
-    redirect_to book_review_path(@book, @review)
+    redirect_to meeting_path(@meeting)
   end
 
   # destroy
