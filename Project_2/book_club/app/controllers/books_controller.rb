@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   def index
-    @books= Books.all
+    @books= Book.all
   end
 
   def show
@@ -18,12 +18,10 @@ class BooksController < ApplicationController
   def new
     @meeting = Meeting.find(params[:meeting_id])
     @book = @meeting.books.new
-
   end
 
   def create
     @meeting = Meeting.find(params[:meeting_id])
-    @club = Club.find(@meeting.club_id)
     @meeting.books.create!(book_params.merge(user: current_user))
 
 
@@ -46,7 +44,7 @@ def edit
       flash[:alert] = "Only the creater can edit"
     end
 
-    redirect_to meeting_book_path(@meeting, @book)
+    redirect_to meeting_path(@meeting)
   end
 
   # destroy
@@ -57,7 +55,7 @@ def edit
   else
     flash[:alert] = "Only creater delete"
   end
-    redirect_to books_path
+    redirect_to meeting_path(@meeting)
   end
 
 private
