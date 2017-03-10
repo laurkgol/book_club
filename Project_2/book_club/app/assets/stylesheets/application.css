@@ -17,6 +17,7 @@ main{
   align-items: stretch;
 
 }
+/*Good implementation of flexbox*/
 
 
 #b{
@@ -39,7 +40,7 @@ a:hover{
   font-size: 15pt;
 }
 
-
+/*I really like the pastel color scheme here*/
 
 hr {
   color: #B23057;
@@ -124,6 +125,8 @@ sidebar{
 /*.members{
   background-color: #CC144C;
   }*/
+
+  /*Generally try to clean out out any commented out code before sending to production*/
 .books{
   background-color: #19CBFF;
 }
@@ -165,12 +168,13 @@ ul{
 
 .book_table{
   display: flex;
-  align-content: space-between;;
+  align-content: space-between;
+  /*Extra semicolon above. */
 }
 .book_description{
   margin: 10pt;
 }
-
+/*Good use of clearfix*/
 .clearfix:after {
   visibility: hidden;
   display: block;

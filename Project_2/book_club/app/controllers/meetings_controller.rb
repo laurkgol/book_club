@@ -1,7 +1,7 @@
 class MeetingsController < ApplicationController
   def index
     @meetings = Meeting.all
-
+    # From what I can tell, this controller action is not used. IF so, you can remove it
   end
   def new
       @club = Club.find(params[:club_id])

@@ -6,6 +6,7 @@
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%# Try to make your indenting more uniform and indicative of DOM level %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -13,7 +14,7 @@
     <div id = "wrapper">
       <nav>
         <h1 id = "title"><%= link_to "BookClub", root_path %> <%= image_tag('books.png', :class => 'logo', :id => 'books') %> <%= image_tag('wine.png', :class => 'logo', :id => 'wine')  %></h1>
-
+        <%# well formatted and styled navigation bar %>
         <div class = "sign" >
             <% if !current_user %>
            <%= link_to "Sign up", new_user_registration_path %> |

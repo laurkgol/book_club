@@ -23,6 +23,7 @@ class ClubsController < ApplicationController
     if @club.user == current_user
         @club.update(club_params)
     else
+      # Nice job checking user permissions for editing and flash for notifications
       flash[:alert] = "Only the creater can edit"
     end
 

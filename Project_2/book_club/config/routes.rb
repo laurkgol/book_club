@@ -16,4 +16,7 @@ resources :clubs do
   end
 
 end
+
+# Excellent use of root to, resources, and nested routes for setting up your applications routes
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
