@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20170302155943) do
     t.string  "link"
     t.string  "genre"
     t.string  "rating"
+    # shouldn't rating be an integer or decimal?
     t.integer "club_id"
     t.integer "meeting_id"
     t.integer "user_id"
@@ -41,6 +42,7 @@ ActiveRecord::Schema.define(version: 20170302155943) do
 
   create_table "meetings", force: :cascade do |t|
     t.string  "date"
+    # for things pertaining to dates or times, best practice is to use datetime data type
     t.string  "location"
     t.string  "host"
     t.integer "club_id"

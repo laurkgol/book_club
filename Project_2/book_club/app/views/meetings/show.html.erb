@@ -25,6 +25,8 @@
       <%  @sum_ratings = @reviews.reduce(0) { |sum, review| sum + review.rating } %>
       <%  @average_rating = @sum_ratings / @reviews.length %>
       <p>Average Rating: <%= @average_rating %></p>
+      <%# Really impressive code here. Think about moving some of this logic (the reduce
+      in particular) to your controller instead and have it passed in as variables. %>
   <% end %>
 
     <% end %>

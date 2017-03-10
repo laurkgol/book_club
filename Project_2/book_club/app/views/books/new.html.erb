@@ -1,7 +1,7 @@
 <h1> Meeting on <%= @meeting.date %>
   <h2>New Book</h2>
+  <%= form_for [@meeting, @book] do |f| %>
   <ul>
-    <%= form_for [@meeting, @book] do |f| %>
     <li>  <%= f.label :title %></li>
     <li> <%= f.text_field :title %></li>
 
