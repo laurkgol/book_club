@@ -36,8 +36,9 @@ end
   end
 
   def destroy
+    @club = Club.find(params[:club_id])
     @meeting = Meeting.find(params[:id])
-    @club = Club.find(@meeting.club_id)
+
 
     if @meeting.user == current_user
     @meeting.destroy

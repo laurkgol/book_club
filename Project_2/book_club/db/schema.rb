@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20170302155943) do
     t.string  "description"
     t.string  "link"
     t.string  "genre"
-    t.string  "rating"
+    t.integer  "rating"
     t.integer "club_id"
     t.integer "meeting_id"
     t.integer "user_id"

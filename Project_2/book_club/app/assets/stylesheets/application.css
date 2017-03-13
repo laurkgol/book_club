@@ -165,7 +165,7 @@ ul{
 
 .book_table{
   display: flex;
-  align-content: space-between;;
+  align-content: space-between;
 }
 .book_description{
   margin: 10pt;
@@ -178,4 +178,7 @@ ul{
   content: " ";
   clear: both;
   height: 0;
+}
+audio{
+  display:none;
 }

@@ -5,8 +5,8 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
-    @sum_rating = @book.reviews.reduce do |sum, rating|
-        sum + rating
+    @sum_rating = @book.reviews.reduce(0) do |sum, rating|
+        sum + review.rating
       end
       @average_rating = @sum_rating / @book.reviews.length
       @meeting = Meeting.find(params[:meeting_id])
@@ -50,6 +50,7 @@ def edit
   # destroy
   def destroy
     @book = Book.find(params[:id])
+    @meeting = Meeting.find(params[:meeting_id])
     if @book.user == current_user
     @book.destroy
   else
