@@ -1,7 +1,7 @@
 <div class = "club">
   <h1> <%= link_to @club.name, club_path(@club) %></h1>
 </div>
-<h2><%= @member.name %></h2>
+<h2><%= @member.name %>
   <% if current_user == @member.user %>
     <%= link_to "(edit)", edit_club_member_path(@club) %></h2>
   <% else %>

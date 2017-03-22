@@ -18068,3 +18068,120 @@ Processing by MeetingsController#show as HTML
 Completed 200 OK in 127ms (Views: 104.3ms | ActiveRecord: 14.2ms)
 
 
+Started GET "/" for ::1 at 2017-03-22 14:28:17 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ClubsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clubs/index.html.erb within layouts/application
+  [1m[36mClub Load (1.0ms)[0m  [1m[34mSELECT "clubs".* FROM "clubs"[0m
+  Rendered clubs/index.html.erb within layouts/application (29.7ms)
+Completed 200 OK in 521ms (Views: 410.5ms | ActiveRecord: 41.0ms)
+
+
+Started GET "/clubs/new" for ::1 at 2017-03-22 14:28:22 -0400
+Processing by ClubsController#new as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clubs/new.html.erb within layouts/application
+  Rendered clubs/new.html.erb within layouts/application (28.4ms)
+Completed 200 OK in 87ms (Views: 77.9ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/clubs" for ::1 at 2017-03-22 14:28:39 -0400
+Processing by ClubsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oJ+JsPWaudGDg0Kb8BNKMr9BY1Rz2oZ9EDuoWbv1sK2hj3VeAxc8aV2YwL/Ir7J5IjSlZJoeeZjhEwU3WlPAxA==", "club"=>{"name"=>"klhda", "start_date"=>"lkjahfdl", "end_date"=>"lkjhafd"}, "commit"=>"Create Club"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (19.4ms)[0m  [1m[32mINSERT INTO "clubs" ("name", "start_date", "end_date", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "klhda"], ["start_date", "lkjahfdl"], ["end_date", "lkjhafd"], ["user_id", 1]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 59ms (ActiveRecord: 23.2ms)
+
+
+Started GET "/" for ::1 at 2017-03-22 14:28:39 -0400
+Processing by ClubsController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clubs/index.html.erb within layouts/application
+  [1m[36mClub Load (0.4ms)[0m  [1m[34mSELECT "clubs".* FROM "clubs"[0m
+  Rendered clubs/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 54ms (Views: 45.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/clubs/3" for ::1 at 2017-03-22 14:28:41 -0400
+Processing by ClubsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.3ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clubs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeeting Load (0.8ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings" WHERE "meetings"."club_id" = $1[0m  [["club_id", 3]]
+  [1m[36mMember Load (0.7ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."club_id" = $1[0m  [["club_id", 3]]
+  Rendered clubs/show.html.erb within layouts/application (49.7ms)
+Completed 200 OK in 97ms (Views: 75.4ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/" for ::1 at 2017-03-22 14:28:47 -0400
+Processing by ClubsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clubs/index.html.erb within layouts/application
+  [1m[36mClub Load (0.5ms)[0m  [1m[34mSELECT "clubs".* FROM "clubs"[0m
+  Rendered clubs/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 74ms (Views: 65.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/clubs/1" for ::1 at 2017-03-22 15:37:18 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ClubsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.6ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clubs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeeting Load (2.3ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings" WHERE "meetings"."club_id" = $1[0m  [["club_id", 1]]
+  [1m[36mBook Load (13.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = $1[0m  [["meeting_id", 1]]
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = $1[0m  [["meeting_id", 2]]
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = $1[0m  [["meeting_id", 7]]
+  [1m[36mMember Load (1.3ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."club_id" = $1[0m  [["club_id", 1]]
+  Rendered clubs/show.html.erb within layouts/application (207.1ms)
+Completed 200 OK in 668ms (Views: 511.4ms | ActiveRecord: 84.9ms)
+
+
+Started GET "/clubs/1/members/1" for ::1 at 2017-03-22 15:37:23 -0400
+Processing by MembersController#show as HTML
+  Parameters: {"club_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMember Load (13.4ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (1.0ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering members/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered members/show.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 75ms (Views: 49.0ms | ActiveRecord: 15.9ms)
+
+
+Started GET "/clubs/1/members/1" for ::1 at 2017-03-22 15:39:38 -0400
+Processing by MembersController#show as HTML
+  Parameters: {"club_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMember Load (0.6ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.6ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering members/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered members/show.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 106ms (Views: 72.6ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/clubs/1" for ::1 at 2017-03-22 15:39:48 -0400
+Processing by ClubsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClub Load (0.8ms)[0m  [1m[34mSELECT  "clubs".* FROM "clubs" WHERE "clubs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clubs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeeting Load (0.6ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings" WHERE "meetings"."club_id" = $1[0m  [["club_id", 1]]
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = $1[0m  [["meeting_id", 1]]
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = $1[0m  [["meeting_id", 2]]
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."meeting_id" = $1[0m  [["meeting_id", 7]]
+  [1m[36mMember Load (0.5ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."club_id" = $1[0m  [["club_id", 1]]
+  Rendered clubs/show.html.erb within layouts/application (31.6ms)
+Completed 200 OK in 102ms (Views: 68.1ms | ActiveRecord: 6.0ms)
+
+
