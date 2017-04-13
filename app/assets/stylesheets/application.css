@@ -173,7 +173,6 @@ ul{
   list-style-type: none;
 
 }
-
 .book_table{
   display: flex;
   align-content: space-between;
@@ -193,3 +192,60 @@ ul{
 audio{
   display:none;
 }
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    #wrapper{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      justify-content: space-between;
+      /*height: 100vh;*/
+    }
+    body{
+      /*height: 100vh;*/
+    }
+
+    #title a{
+      font-size: 70pt;
+    }
+    p{
+      font-size: 30pt;
+    }
+    .logo, #wine{
+      height: 50pt;
+    }
+    .sign{
+      font-size: 30pt;
+      text-align: center;
+
+    }
+    main{
+      width: 60%;
+    }
+    .add{
+      font-size: 20pt;
+    }
+    h2{
+      font-size: 30pt;
+      text-align: center;
+
+    }
+    li{
+      font-size: 30pt;
+      text-align: center;
+    }
+    a{
+      font-size: 30pt;
+    }
+    h1{
+      font-size: 30pt;
+    }
+    input{
+      font-size: 30pt;
+      text-align: center;
+    }
+  }
