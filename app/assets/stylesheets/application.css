@@ -1,3 +1,13 @@
+*{
+  margin: 0;
+}
+
+#wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
 main{
   margin-left: 150pt;
   margin-right: 150pt;
@@ -90,7 +100,7 @@ body{
 }
 
 nav, footer{
-  padding: 5pt;
+  padding: 20px;
   background-color: #FFEC00;
   width: 100%;
   text-align: center;
@@ -102,6 +112,7 @@ nav{
 }
 footer{
   margin-top: 20pt;
+  margin-bottom: 0;
 }
 .sign{
   text-align: left;
